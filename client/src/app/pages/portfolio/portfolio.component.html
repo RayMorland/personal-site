@@ -1,0 +1,49 @@
+<main>
+  <div class="content" [@animate]="{ value: '*', params: { delay: '350ms' } }">
+    <div class="section">
+      <h1>
+        take a look at some of <br />
+        my work
+      </h1>
+    </div>
+    <div *ngIf="projects" class="section">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          width: 100%;
+        "
+      >
+        <div
+          *ngFor="let project of projects"
+          [routerLink]="[project.slug]"
+          class="project-link"
+          style="width: 100%"
+        >
+          <div>
+            <h2>{{ project.title }}</h2>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              width: 100%;
+            "
+          >
+            <div
+              *ngFor="let service of project.services.split(',')"
+              style="margin-right: 0.75em"
+            >
+              {{ service }}
+            </div>
+          </div>
+          <p style="width: 50%">{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

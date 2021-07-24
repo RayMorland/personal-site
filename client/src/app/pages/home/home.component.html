@@ -1,0 +1,110 @@
+<main>
+  <div class="content" [@animate]="{ value: '*', params: { delay: '350ms' } }">
+    <!-- Heading Section -->
+    <div class="section">
+      <div>
+        <h1
+          [@animate]="{ value: '*', params: { delay: '350ms' } }"
+          style="margin-bottom: 1em"
+        >
+          <span>hello, my name is raymond </span> <br />
+          I design and build web applicaitons
+        </h1>
+        <app-link-one [linkText]="'Let\'s connect'"></app-link-one>
+      </div>
+    </div>
+    <div class="section">
+      <p
+        style="margin-top: 7.5em; width: 20em"
+        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+      >
+        You care about your customers. You care about your business. Do you want
+        to leverage the latest technology to grow your business and continue to
+        be competitive into the future but don't have the time to learn new
+        software? That's what I do. Let me help.
+        <br />
+      </p>
+      <app-link-one [linkText]="'Learn More'"></app-link-one>
+    </div>
+    <!-- Projects Section -->
+    <div class="section">
+      <h2 class="section-heading">projects</h2>
+      <div
+        *ngIf="projects"
+        class="card-row-1"
+        style="display: flex; flex-direction: row; flex-wrap: wrap"
+      >
+        <div
+          *ngFor="let project of projects | slice: 0:3"
+          [routerLink]="['work/' + project.slug]"
+          class="card-1"
+          style="width: 100%"
+        >
+          <h3 style="font-size: 3em">{{ project.title }}</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              width: 100%;
+            "
+          >
+            <div
+              *ngFor="let service of project.services.split(',')"
+              style="margin-right: 0.75em"
+              class="project-service"
+            >
+              {{ service }}
+            </div>
+          </div>
+          <p style="width: 50%">{{ project.description }}</p>
+        </div>
+      </div>
+      <div style="margin-top: 5.3em">
+        <app-link-one [linkText]="'More Work'"></app-link-one>
+      </div>
+    </div>
+    <!-- Blogposts Section -->
+    <!-- <div class="section" style="margin-bottom: 5em">
+      <h2>some <em style="font-family: 'Cardo', serif">words</em></h2>
+      <div
+        style="
+          width: 25%;
+          background-color: #fff;
+          height: 3px;
+          margin-top: 5.3em;
+        "
+        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+      ></div>
+      <div
+        *ngIf="blogposts"
+        class="card-row-1"
+        style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%"
+      >
+        <div
+          *ngFor="let blogpost of blogposts | slice: 0:3"
+          [routerLink]="['words/' + blogpost.slug]"
+          class="card-1"
+          style="width: 45%"
+        >
+          <h3 style="font-size: 3em">{{ blogpost.title }}</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              padding-right: 20%;
+            "
+          >
+            <p>
+              {{ blogpost.subtitle }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 5.3em">
+        <a routerLink="words">More Words</a>
+      </div>
+    </div> -->
+  </div>
+</main>

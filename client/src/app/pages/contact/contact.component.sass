@@ -1,0 +1,69 @@
+main
+    min-height: 100%
+    // background-color: #8F8BA7
+
+.content
+    padding: 18em 13.2em
+
+#contact-form
+    display: flex
+    // flex-direction: row
+    flex-wrap: wrap
+
+    .contact-form-button
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+
+        .form-button
+            background: none
+            color: white
+            font-family: 'Questrial'
+            font-size: 3.5em
+            border: none
+            &:hover
+                cursor: pointer
+
+        .material-icons
+            font-size: 2em
+
+        &:hover
+            cursor: pointer
+
+    .contact-form-input
+        flex: 50%
+        // padding-right: 10px
+        max-width: 50%
+        margin: 20px 0px 20px 0px
+
+        input
+            width: 75%
+            background: none
+            border: none
+            border-bottom: 3px solid white
+            font-size: 3.5em
+            font-family: 'Questrial'
+            color: white
+
+        input:focus
+            outline: none
+            caret
+
+        select
+            width: 75%
+            height: 100%
+            background-color: rgba(0,0,0,0)
+            border: none
+            border-bottom: 3px solid white
+
+        select::placeholder
+            font-size: 3.5em
+            font-family: 'Questrial'
+
+    .contact-form-input.full-width
+        flex: 100%
+        max-width: 100%
+
+        input
+            width: 87.5%

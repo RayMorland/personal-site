@@ -1,0 +1,43 @@
+<main>
+  <div class="content">
+    <div class="section" style="margin-bottom: 10em">
+      <h1 [@animate]="{ value: '*', params: { delay: '350ms' } }">
+        some <em style="font-family: 'Cardo', serif">words</em> and
+        <em style="font-family: 'Cardo', serif">ideas</em>
+      </h1>
+      <div
+        style="
+          width: 25%;
+          background-color: #fff;
+          height: 3px;
+          margin-top: 10.3em;
+        "
+        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+      ></div>
+    </div>
+    <!-- Blogpost List Sections -->
+    <div
+      *ngIf="blogposts"
+      class="section"
+      style="display: flex; flex-direction: row; margin: -30px"
+      [@animate]="{ value: '*', params: { delay: '350ms' } }"
+    >
+      <div
+        *ngFor="let blogpost of blogposts"
+        [routerLink]="[blogpost.slug]"
+        class="blogpost-card"
+        style="width: 50%; padding: 30px"
+      >
+        <div class="image-wrapper">
+          <img
+            class="filtered-image"
+            src="../../../assets/abacus-cards-mockup.png"
+            alt=""
+            style="margin-bottom: 1em"
+          />
+        </div>
+        <h2>{{ blogpost.title }}</h2>
+      </div>
+    </div>
+  </div>
+</main>
