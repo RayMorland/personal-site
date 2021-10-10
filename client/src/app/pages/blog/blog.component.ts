@@ -6,17 +6,16 @@ import { BlogpostService } from 'src/app/shared/services/blogpost.service';
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.sass'],
-  animations: [rmAnimations]
+  animations: [rmAnimations],
 })
 export class BlogComponent implements OnInit {
-  blogposts: any;
+  blogposts: any = [];
 
-  constructor(private blogpostService: BlogpostService) { }
+  constructor(private blogpostService: BlogpostService) {}
 
   ngOnInit(): void {
-    this.blogpostService.GetBlogposts().subscribe(res => {
+    this.blogpostService.GetBlogposts().subscribe((res) => {
       this.blogposts = res;
     });
   }
-
 }
