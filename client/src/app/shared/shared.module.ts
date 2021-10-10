@@ -8,8 +8,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/util/not-found/not-found.component';
 import { LinkOneComponent } from './components/link-one/link-one.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { ProjectLinkOneComponent } from './components/project-link-one/project-link-one.component';
+import { FormInputOneComponent } from './components/forms/form-input-one/form-input-one.component';
+import { FormOneComponent } from './components/forms/form-one/form-one.component';
 
 @NgModule({
   declarations: [
@@ -17,22 +18,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     PublicSiteComponent,
     NotFoundComponent,
-    LinkOneComponent
+    LinkOneComponent,
+    ProjectLinkOneComponent,
+    FormInputOneComponent,
+    FormOneComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     PublicSiteComponent,
+    ProjectLinkOneComponent,
     LinkOneComponent,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

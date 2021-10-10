@@ -1,0 +1,12 @@
+<div class="project-link-one">
+  <h3>{{ project.title }}</h3>
+  <div class="project-link-one-service-list">
+    <div
+      *ngFor="let service of project.services.split(',')"
+      class="project-link-one-service-list-item"
+    >
+      {{ service }}
+    </div>
+  </div>
+  <p class="project-link-one-description">{{ project.description }}</p>
+</div>

@@ -34,32 +34,16 @@
         class="card-row-1"
         style="display: flex; flex-direction: row; flex-wrap: wrap"
       >
-        <div
+        <app-project-link-one
           *ngFor="let project of projects | slice: 0:3"
           [routerLink]="['work/' + project.slug]"
           class="card-1"
           style="width: 100%"
+          [project]="project"
         >
-          <h3 style="font-size: 3em">{{ project.title }}</h3>
-          <div
-            style="
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              width: 100%;
-            "
-          >
-            <div
-              *ngFor="let service of project.services.split(',')"
-              style="margin-right: 0.75em"
-              class="project-service"
-            >
-              {{ service }}
-            </div>
-          </div>
-          <p style="width: 50%">{{ project.description }}</p>
-        </div>
+        </app-project-link-one>
       </div>
+
       <div style="margin-top: 5.3em">
         <app-link-one [linkText]="'More Work'"></app-link-one>
       </div>
