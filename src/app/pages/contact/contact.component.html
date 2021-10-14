@@ -1,0 +1,69 @@
+<main>
+  <div class="content" [@animate]="{ value: '*', params: { delay: '350ms' } }">
+    <div class="section">
+      <h1>let's connect</h1>
+    </div>
+    <div class="section">
+      <form
+        *ngIf="!messageSent"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        id="contact-form"
+      >
+        <div class="contact-form-input">
+          <input type="text" placeholder="name" formControlName="name" />
+        </div>
+        <div class="contact-form-input">
+          <input type="email" placeholder="email" formControlName="email" />
+        </div>
+        <div class="contact-form-input">
+          <input type="text" placeholder="phone" formControlName="phone" />
+        </div>
+        <div class="contact-form-input">
+          <input
+            type="text"
+            placeholder="company name"
+            formControlName="companyName"
+          />
+        </div>
+        <div class="contact-form-input">
+          <input
+            type="url"
+            placeholder="current site"
+            formControlName="currentSite"
+          />
+        </div>
+        <div class="contact-form-input">
+          <input type="number" placeholder="budget" formControlName="budget" />
+        </div>
+        <div class="contact-form-input full-width">
+          <input
+            placeholder="project description"
+            formControlName="projectDescription"
+          />
+        </div>
+        <div>
+          <button class="form-button" type="submit">
+            <div class="contact-form-button">
+              <span> submit </span>
+              <span
+                class="material-icons"
+                style="font-size: 1.3em; margin-left: 0.5em"
+                >east</span
+              >
+            </div>
+          </button>
+        </div>
+      </form>
+      <div *ngIf="messageSent && loading">
+        <h2>Loading...</h2>
+      </div>
+      <div *ngIf="messageSent && success && loading" id="message-sent">
+        <h2>Your message has been sent. Thank you</h2>
+      </div>
+      <div *ngIf="messageSent && !success && loading" id="error-message">
+        <h2>Error</h2>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,91 @@
+<footer>
+  <div
+    class="footer-wrapper"
+    [ngStyle]="{ 'background-color': backgroundColor }"
+  >
+    <div
+      href="mailto:raymondmorland@gmail.com"
+      style="
+        margin-bottom: 6em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      "
+    >
+      <h2>ready to begin?</h2>
+      <a routerLink="/contact" style="margin: 0" id="connect-link"
+        ><h2 style="margin: 0 0 0.25em 0">let's connect</h2></a
+      >
+    </div>
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-start: space-between;
+        align-items: flex-start;
+      "
+    >
+      <div style="width: 25%">
+        <h3>site</h3>
+        <ul class="footer-links">
+          <li><a [routerLink]="['/about']">about</a></li>
+          <li><a [routerLink]="['/work']">work</a></li>
+          <li><a href="mailto:raymondmorland@gmail.com">contact</a></li>
+        </ul>
+      </div>
+      <div style="width: 25%">
+        <h3>find me</h3>
+        <ul class="footer-links">
+          <li><a href=""> facebook </a></li>
+          <li><a href=""> instagram </a></li>
+          <li><a href=""> linkedin </a></li>
+          <li><a href=""> github </a></li>
+        </ul>
+      </div>
+      <div style="width: 25%">
+        <h3>contact</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:raymondmorland@gmail.com">ray@raymondmorland.com</a>
+          </li>
+        </ul>
+      </div>
+      <div style="width: 25%">
+        <h3>home base</h3>
+        <ul class="footer-links">
+          <li><a href="">Kelowna, BC</a></li>
+          <li>canada</li>
+        </ul>
+      </div>
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 0.5;
+      "
+    >
+      <div>
+        <a href="">privacy</a><a href="">site info</a><a href="">terms</a>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <span class="material-icons" style="font-size: 1em; margin-right: 0.3em"
+          >copyright</span
+        >2021 raymondmorland
+      </div>
+    </div>
+  </div>
+</footer>

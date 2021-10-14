@@ -1,0 +1,26 @@
+<main>
+  <div class="content" [@animate]="{ value: '*', params: { delay: '350ms' } }">
+    <div class="section">
+      <h1>my work</h1>
+    </div>
+    <div *ngIf="projects" class="section">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          width: 100%;
+        "
+      >
+        <app-project-link-one
+          *ngFor="let project of projects"
+          [routerLink]="[project.slug]"
+          class="project-link"
+          style="width: 100%"
+        >
+        </app-project-link-one>
+      </div>
+    </div>
+  </div>
+</main>

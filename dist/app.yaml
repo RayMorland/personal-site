@@ -1,0 +1,12 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /
+  static_files: personal-site/index.html
+  upload: personal-site/index.html
+
+- url: /
+  static_dir: personal-site

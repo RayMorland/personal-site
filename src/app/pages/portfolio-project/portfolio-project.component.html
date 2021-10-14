@@ -1,0 +1,159 @@
+<main>
+  <div
+    *ngIf="project"
+    class="content"
+    [@animate]="{ value: '*', params: { delay: '350ms' } }"
+  >
+    <!-- Intro Section -->
+    <div class="section">
+      <div style="margin-bottom: 10em">
+        <h1>{{ project.title }}</h1>
+      </div>
+    </div>
+    <!-- Projects Stats Section -->
+    <div class="section portfolio-project-section">
+      <div class="left-section">
+        <h2 class="section-heading">stats</h2>
+      </div>
+      <div class="right-section">
+        <div
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+          "
+        >
+          <div>
+            <h3>year</h3>
+          </div>
+          <div>
+            <h3>location</h3>
+          </div>
+          <div>
+            <h3>industry</h3>
+          </div>
+          <div>
+            <h3>services</h3>
+            <div
+              *ngFor="let service of project.services.split(',')"
+              style="margin-right: 0.75em"
+              class="project-service"
+            >
+              {{ service }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- The Client Section -->
+    <div class="section portfolio-project-section">
+      <div class="left-section">
+        <h2 class="section-heading">the client</h2>
+      </div>
+      <div class="right-section">
+        <p>
+          Abacus Datagraphics provides industry leading services to the Western
+          Canadian Energy Industry. Based in Red Deer Alberta and with over 25
+          years in the industry they are a trusted and well known company in
+          this sector. Abacus was looking to freshen up their brand and bring a
+          new modern look to their web presence.
+        </p>
+      </div>
+    </div>
+    <!-- Main Image Section -->
+    <div class="section">
+      <div class="image-wrapper">
+        <img
+          class="filtered-image"
+          src="../../../assets/images/abacus-cards-mockup.png"
+          alt=""
+          style="margin-bottom: 1em"
+        />
+      </div>
+    </div>
+    <!-- Summary Section -->
+    <div class="section portfolio-project-section">
+      <div class="left-section">
+        <h2 class="section-heading">summary</h2>
+      </div>
+      <div class="right-section">
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+    <!-- Gallery Section -->
+    <div class="section portfolio-project-gallery-section">
+      <div class="image-grid-main-img">
+        <img
+          class="filtered-image"
+          src="../../../assets/images/abacus-cards-mockup.png"
+          alt=""
+          style="margin-bottom: 1em"
+        />
+      </div>
+      <div class="image-grid">
+        <div class="image-grid-img">
+          <img
+            class="filtered-image"
+            src="../../../assets/images/abacus-cards-mockup.png"
+            alt=""
+            style="margin-bottom: 1em"
+          />
+        </div>
+        <div class="image-grid-img">
+          <img
+            class="filtered-image"
+            src="../../../assets/images/abacus-cards-mockup.png"
+            alt=""
+            style="margin-bottom: 1em"
+          />
+        </div>
+        <div class="image-grid-img">
+          <img
+            class="filtered-image"
+            src="../../../assets/images/abacus-cards-mockup.png"
+            alt=""
+            style="margin-bottom: 1em"
+          />
+        </div>
+        <div class="image-grid-img">
+          <img
+            class="filtered-image"
+            src="../../../assets/images/abacus-cards-mockup.png"
+            alt=""
+            style="margin-bottom: 1em"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Next Project Section -->
+    <div class="section portfolio-project-section">
+      <div
+        class="left-section"
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        "
+      >
+        <h2 class="section-heading" style="margin: 0">next project</h2>
+      </div>
+      <div
+        class="right-section"
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+        "
+      >
+        <h2 style="margin: 0">next project title</h2>
+        <span class="material-icons" style="font-size: 3em; margin-left: 0.4em"
+          >east</span
+        >
+      </div>
+    </div>
+  </div>
+</main>
