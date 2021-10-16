@@ -15,6 +15,7 @@
       >
         <app-project-link-one
           *ngFor="let project of projects"
+          [project]="project"
           [routerLink]="[project.slug]"
           class="project-link"
           style="width: 100%"
