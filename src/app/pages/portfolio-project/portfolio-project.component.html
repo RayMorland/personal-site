@@ -48,11 +48,11 @@
       </div>
     </div>
     <!-- Main Image Section -->
-    <div class="section">
+    <div *ngIf="images.length > 0" class="section">
       <div class="image-wrapper">
         <img
           class="filtered-image"
-          src="../../../assets/images/abacus-cards-mockup.png"
+          [src]="images[0].url"
           alt=""
           style="margin-bottom: 1em"
         />
