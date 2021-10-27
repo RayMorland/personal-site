@@ -27,12 +27,15 @@
         >
           <div>
             <h3>year</h3>
+            <p>{{ project.year }}</p>
           </div>
           <div>
             <h3>location</h3>
+            <p>{{ project.location }}</p>
           </div>
           <div>
             <h3>industry</h3>
+            <p>{{ project.industry }}</p>
           </div>
           <div>
             <h3>services</h3>
@@ -48,11 +51,11 @@
       </div>
     </div>
     <!-- Main Image Section -->
-    <div *ngIf="images.length > 0" class="section">
+    <div *ngIf="image" class="section">
       <div class="image-wrapper">
         <img
           class="filtered-image"
-          [src]="images[0].url"
+          [src]="image.url"
           alt=""
           style="margin-bottom: 1em"
         />
@@ -73,74 +76,52 @@
         </p>
       </div>
     </div>
+    <div *ngIf="image" class="section">
+      <div class="image-wrapper" style="overflow: hidden; height: 75vh">
+        <img
+          class="filtered-image"
+          [src]="this.project.gallery[0].url"
+          alt=""
+          style="margin-bottom: 1em"
+        />
+      </div>
+    </div>
     <!-- Summary Section -->
     <div class="section portfolio-project-section">
       <div class="left-section">
         <h2 class="section-heading">summary</h2>
       </div>
       <div class="right-section">
-        <p>{{ project.description }}</p>
+        <p>{{ project.summary }}</p>
       </div>
     </div>
     <!-- Gallery Section -->
     <div class="section portfolio-project-gallery-section">
-      <div class="image-grid-main-img">
-        <img
-          class="filtered-image"
-          src="../../../assets/images/abacus-cards-mockup.png"
-          alt=""
-          style="margin-bottom: 1em"
-        />
-      </div>
       <div class="image-grid">
-        <div class="image-grid-img">
-          <img
-            class="filtered-image"
-            src="../../../assets/images/abacus-cards-mockup.png"
-            alt=""
-            style="margin-bottom: 1em"
-          />
-        </div>
-        <div class="image-grid-img">
-          <img
-            class="filtered-image"
-            src="../../../assets/images/abacus-cards-mockup.png"
-            alt=""
-            style="margin-bottom: 1em"
-          />
-        </div>
-        <div class="image-grid-img">
-          <img
-            class="filtered-image"
-            src="../../../assets/images/abacus-cards-mockup.png"
-            alt=""
-            style="margin-bottom: 1em"
-          />
-        </div>
-        <div class="image-grid-img">
-          <img
-            class="filtered-image"
-            src="../../../assets/images/abacus-cards-mockup.png"
-            alt=""
-            style="margin-bottom: 1em"
-          />
+        <div *ngFor="let image of images" class="image-grid-img">
+          <img class="filtered-image" [src]="image.url" alt="" />
         </div>
       </div>
     </div>
     <!-- Next Project Section -->
     <div class="section portfolio-project-section">
       <div
+        [routerLink]="['/work']"
         class="left-section"
         style="
           display: flex;
           flex-direction: row;
           justify-content: flex-start;
           align-items: center;
+          width: 100%;
+          cursor: pointer;
         "
       >
-        <h2 class="section-heading" style="margin: 0">next project</h2>
+        <h2 class="section-heading" style="margin: 0" id="back-to-work">
+          back to projects
+        </h2>
       </div>
-      <div
+      <!-- <div
         class="right-section"
         style="
           display: flex;
@@ -153,7 +134,7 @@
         <span class="material-icons" style="font-size: 3em; margin-left: 0.4em"
           >east</span
         >
-      </div>
+      </div> -->
     </div>
   </div>
 </main>

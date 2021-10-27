@@ -32,16 +32,20 @@ main
                 width: 100%
 
         .image-grid
-            display: flex
-            flex-direction: row
-            align-content: flex-start
-            justify-content: space-between
-            flex-wrap: wrap
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 2.5em
+            grid-auto-rows: minmax(100px, 500px)
 
             .image-grid-img
                 width: 100%
-                flex-basis: 48.5%
-                
+                overflow: hidden
 
                 img
-                    width: 100%
+                    min-width: 100%
+                    min-height: 100%
+
+    #back-to-work
+        transition: all .2s ease
+        &:hover
+            opacity: 1

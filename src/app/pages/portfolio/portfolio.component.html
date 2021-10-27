@@ -1,9 +1,13 @@
 <main>
-  <div class="content" [@animate]="{ value: '*', params: { delay: '350ms' } }">
+  <div
+    *ngIf="projects"
+    class="content"
+    [@animate]="{ value: '*', params: { delay: '350ms' } }"
+  >
     <div class="section">
       <h1>my work</h1>
     </div>
-    <div *ngIf="projects" class="section">
+    <div class="section">
       <div
         style="
           display: flex;

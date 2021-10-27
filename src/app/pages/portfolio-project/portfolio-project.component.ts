@@ -13,6 +13,7 @@ import { ProjectService } from "src/app/shared/services/project.service";
 })
 export class PortfolioProjectComponent implements OnInit {
   project: any = { title: "", services: "", slug: "", description: "" };
+  image: any;
   images: any = [];
 
   constructor(
@@ -25,10 +26,10 @@ export class PortfolioProjectComponent implements OnInit {
       const id = params["id"];
       console.log("Url Id: ", id);
       this.projectService.GetProject(id).subscribe((res) => {
-        console.log(res[0]);
         this.project = res[0];
-        this.images = this.project.primary_image;
-        console.log(this.images[0].url);
+        this.image = this.project.primary_image;
+        this.images = this.project.gallery.slice(1, 5);
+        console.log(this.images);
       });
     });
   }
