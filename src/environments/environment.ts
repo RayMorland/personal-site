@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  // webapiurl: (window as any)["envconfig"]["apiurl"] || "default"                   
+  apiURL: "http://localhost:1337",
+  // webapiurl: (window as any)["envconfig"]["apiurl"] || "default"
 };
 
 /*
