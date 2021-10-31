@@ -9,4 +9,7 @@
     </div>
   </div>
   <p class="project-link-one-description">{{ project.description }}</p>
+  <a [routerLink]="['/work/' + project.slug]">
+    <app-link-one [linkText]="'view project'"></app-link-one
+  ></a>
 </div>
