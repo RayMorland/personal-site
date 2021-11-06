@@ -2,17 +2,13 @@
   <div class="content" [@animate]="{ value: '*', params: { delay: '350ms' } }">
     <!-- Heading Section -->
     <div class="section">
-      <div style="width: 80%">
+      <div style="width: 100%">
         <h1
           [@animate]="{ value: '*', params: { delay: '350ms' } }"
-          style="margin-bottom: 1em"
+          style="margin-bottom: 1em; text-transform: uppercase"
         >
-          <span>hello, my name is raymond </span> <br />
-          I design and build web applications
+          designer and builder of web applications
         </h1>
-        <a href="mailto:raymondmorland@gmail.com">
-          <app-link-one [linkText]="'Let\'s connect'"></app-link-one>
-        </a>
       </div>
     </div>
     <div class="section">
@@ -26,13 +22,10 @@
         software? That's what I do. Let me help.
         <br />
       </p>
-      <a [routerLink]="['/about']">
-        <app-link-one [linkText]="'Learn More'"></app-link-one>
-      </a>
     </div>
     <!-- Projects Section -->
     <div class="section" style="margin-bottom: 0em">
-      <h2 class="section-heading">projects</h2>
+      <p class="section-heading" style="margin-bottom: 5em">projects</p>
       <div
         *ngIf="projects"
         class="card-row-1"
@@ -46,12 +39,6 @@
           [project]="project"
         >
         </app-project-link-one>
-      </div>
-
-      <div style="margin-top: 5.3em">
-        <a [routerLink]="['/work']">
-          <app-link-one [linkText]="'More Work'"></app-link-one>
-        </a>
       </div>
     </div>
     <!-- Blogposts Section -->
