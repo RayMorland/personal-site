@@ -8,4 +8,5 @@ export default class Project {
   } = {
     url: "",
   };
+  id: String = "";
 }

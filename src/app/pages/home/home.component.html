@@ -17,33 +17,45 @@
       </div>
     </div>
     <div class="section">
-      <p
-        style="margin-top: 7.5em; width: 20em"
-        [@animate]="{ value: '*', params: { delay: '350ms' } }"
-      >
-        You care about your customers. You care about your business. Do you want
-        to leverage the latest technology to grow your business and continue to
-        be competitive into the future but don't have the time to learn new
-        software? That's what I do. Let me help.
-        <br />
-      </p>
+      <div #showInfo>
+        <p
+          *ngIf="showInfoContent"
+          style="margin-top: 7.5em; width: 20em"
+          [@animate]="{ value: '*', params: { delay: '350ms' } }"
+        >
+          You care about your customers. You care about your business. Do you
+          want to leverage the latest technology to grow your business and
+          continue to be competitive into the future but don't have the time to
+          learn new software? That's what I do. Let me help.
+          <br />
+        </p>
+      </div>
     </div>
     <!-- Projects Section -->
     <div class="section" style="margin-bottom: 0em">
-      <p class="section-heading" style="margin-bottom: 5em">projects</p>
+      <div #showProject>
+        <p
+          *ngIf="showProjectHeader"
+          class="section-heading"
+          style="margin-bottom: 5em"
+          [@animate]="{ value: '*', params: { delay: '350ms' } }"
+        >
+          projects
+        </p>
+      </div>
+
       <div
         *ngIf="projects"
         class="card-row-1"
         style="display: flex; flex-direction: row; flex-wrap: wrap"
       >
         <app-project-link-one
-          *ngFor="let project of projects; last as lastProject"
-          [routerLink]="['work/' + project.slug]"
+          *ngFor="let project of projects; last as lastProject; index as i"
           class="card-1"
           [project]="project"
           [ngStyle]="{
             width: '100%',
-            'margin-bottom': lastProject ? '0vh' : '25vh'
+            'margin-bottom': lastProject ? '0vh' : '5vh'
           }"
         >
         </app-project-link-one>

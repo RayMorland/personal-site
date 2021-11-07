@@ -1,10 +1,16 @@
-<div #projectLink style="margin-bottom: 10vh" class="project-link-wrapper">
+<div
+  #projectLink
+  style="margin-bottom: 10vh"
+  class="project-link-wrapper"
+  [@navigating]="switching ? 'work' : 'home'"
+  (click)="navigate($event)"
+>
   <div
     *ngIf="show"
     class="project-link-one"
     [@animate]="{ value: '*', params: { delay: '350ms' } }"
   >
-    <div class="left-side">
+    <div class="left-side" [@navigating2]="switching ? 'work' : 'home'">
       <div class="left-side-content">
         <h2 class="title">
           {{ project.title }}
@@ -19,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="right-side">
+    <div class="right-side" [@navigating3]="switching ? 'work' : 'home'">
       <img class="right-side-image" [src]="project.primary_image.url" />
       <a class="view-project-link" [routerLink]="['/work/' + project.slug]"
         >view project</a
