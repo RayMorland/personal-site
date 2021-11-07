@@ -29,7 +29,17 @@ export class PublicSiteComponent implements OnInit {
     this.navStart = router.events.pipe(
       filter((evt) => evt instanceof NavigationStart)
     ) as Observable<NavigationEnd>;
-    this.navStart.subscribe(() => window.scrollTo(0, 0));
+    this.navStart.subscribe((e) => {
+      console.log(e.url.split("/").length);
+      if (e.url.split("/")[1] === "work" && e.url.split("/").length > 2) {
+        document.body.style.backgroundColor = "#ffe8d6";
+        document.body.style.color = "#3f4238";
+      } else {
+        document.body.style.backgroundColor = "#3f4238";
+        document.body.style.color = "#ffe8d6";
+      }
+      window.scrollTo(0, 0);
+    });
   }
   ngOnInit(): void {
     // this.route = this.router.url;

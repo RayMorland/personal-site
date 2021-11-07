@@ -43,13 +43,13 @@ export class HomeComponent implements OnInit {
   @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
     if (
       this.showInfo.nativeElement.getBoundingClientRect().y <=
-      window.innerHeight * 0.35
+      window.innerHeight * 0.6
     ) {
       this.showInfoContent = true;
     }
     if (
       this.showProject.nativeElement.getBoundingClientRect().y <=
-      window.innerHeight * 0.25
+      window.innerHeight * 0.4
     ) {
       console.log(this.showProject.nativeElement);
       this.showProjectHeader = true;

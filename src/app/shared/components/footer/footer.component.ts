@@ -13,13 +13,25 @@ export class FooterComponent implements OnInit {
   // private routerEventSub: Subscription;
 
   public backgroundColor: string = "none";
-  navEnd: Observable<NavigationEnd>;
+  routerEventSub: any;
   route: any;
 
   constructor(private router: Router) {
-    this.navEnd = router.events.pipe(
-      filter((evt) => evt instanceof NavigationEnd)
-    ) as Observable<NavigationEnd>;
+    this.routerEventSub = router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((routeChange: any) => {
+        console.log(routeChange);
+        if (
+          routeChange.url.split("/")[1] === "work" &&
+          routeChange.url.split("/").length > 2
+        ) {
+          document.body.style.backgroundColor = "#ffe8d6";
+          document.body.style.color = "#3f4238";
+        } else {
+          document.body.style.backgroundColor = "#3f4238";
+          document.body.style.color = "#ffe8d6";
+        }
+      });
   }
 
   ngOnInit(): void {
