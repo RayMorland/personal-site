@@ -5,9 +5,14 @@
       <div style="width: 100%">
         <h1
           [@animate]="{ value: '*', params: { delay: '350ms' } }"
-          style="margin-bottom: 1em; text-transform: uppercase"
+          style="
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            font-size: 13vw;
+            word-wrap: break-word;
+          "
         >
-          designer and builder of web applications
+          designer and builder of web apps
         </h1>
       </div>
     </div>
@@ -32,11 +37,14 @@
         style="display: flex; flex-direction: row; flex-wrap: wrap"
       >
         <app-project-link-one
-          *ngFor="let project of projects | slice: 0:3"
+          *ngFor="let project of projects; last as lastProject"
           [routerLink]="['work/' + project.slug]"
           class="card-1"
-          style="width: 100%"
           [project]="project"
+          [ngStyle]="{
+            width: '100%',
+            'margin-bottom': lastProject ? '0vh' : '25vh'
+          }"
         >
         </app-project-link-one>
       </div>

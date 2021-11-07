@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import {
   ActivatedRoute,
   NavigationEnd,
   NavigationStart,
   Router,
-} from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import { Event } from '@angular/router';
+} from "@angular/router";
+import { Observable, Subscription } from "rxjs";
+import { filter } from "rxjs/operators";
+import { Event } from "@angular/router";
+import { rmAnimations } from "../../../animations/rm-animations";
 
 @Component({
-  selector: 'app-public-site',
-  templateUrl: './public-site.component.html',
-  styleUrls: ['./public-site.component.sass'],
+  selector: "app-public-site",
+  templateUrl: "./public-site.component.html",
+  styleUrls: ["./public-site.component.sass"],
+  animations: [rmAnimations],
 })
 export class PublicSiteComponent implements OnInit {
-  public backgroundColor: string = 'none';
+  public backgroundColor: string = "none";
   navEnd: Observable<NavigationEnd>;
   navStart: Observable<NavigationStart>;
   route: any;

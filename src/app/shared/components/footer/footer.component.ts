@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import { Event } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
+import { Observable, Subscription } from "rxjs";
+import { filter } from "rxjs/operators";
+import { Event } from "@angular/router";
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.sass'],
+  selector: "app-footer",
+  templateUrl: "./footer.component.html",
+  styleUrls: ["./footer.component.sass"],
 })
 export class FooterComponent implements OnInit {
   // private routerEventSub: Subscription;
-  public backgroundColor: string = 'none';
+
+  public backgroundColor: string = "none";
   navEnd: Observable<NavigationEnd>;
   route: any;
 

@@ -1,32 +1,33 @@
-<div class="project-link-one">
-  <div class="left-side">
-    <h2
-      style="
-        text-transform: uppercase;
-        font-size: 7em;
-        line-height: normal;
-        margin-bottom: 10px;
-      "
-    >
-      {{ project.title }}
-    </h2>
-    <div class="project-link-one-service-list">
-      <div
-        *ngFor="let service of project.services.split(',')"
-        class="project-link-one-service-list-item"
-      >
-        {{ service }}
+<div #projectLink style="margin-bottom: 10vh" class="project-link-wrapper">
+  <div
+    *ngIf="show"
+    class="project-link-one"
+    [@animate]="{ value: '*', params: { delay: '350ms' } }"
+  >
+    <div class="left-side">
+      <div class="left-side-content">
+        <h2 class="title">
+          {{ project.title }}
+        </h2>
+        <div class="project-link-one-service-list">
+          <div
+            *ngFor="let service of project.services.split(',')"
+            class="project-link-one-service-list-item"
+          >
+            {{ service }}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="right-side">
-    <div
-      class="right-side-image"
-      [style.backgroundImage]="'url(' + project.primary_image.url + ')'"
-    ></div>
-  </div>
-  <!-- <p class="project-link-one-description">{{ project.description }}</p>
+    <div class="right-side">
+      <img class="right-side-image" [src]="project.primary_image.url" />
+      <a class="view-project-link" [routerLink]="['/work/' + project.slug]"
+        >view project</a
+      >
+    </div>
+    <!-- <p class="project-link-one-description">{{ project.description }}</p>
   <a [routerLink]="['/work/' + project.slug]">
     <app-link-one [linkText]="'view project'"></app-link-one
   ></a> -->
+  </div>
 </div>
