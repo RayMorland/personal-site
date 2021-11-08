@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Cantora+One&family=Cardo:ital@1&family=Jost:wght@200;300;400&family=Poppins:ital,wght@0,400;0,500;0,700;1,300;1,400;1,700;1,800&family=Quantico:ital,wght@0,700;1,700&family=Quattrocento+Sans:wght@700&family=Rum+Raisin&family=Questrial&family=Raleway:wght@300&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Cantora+One&family=Cardo:ital@1&family=Jost:wght@200;300;400&family=Poppins:ital,wght@0,400;0,500;0,700;1,300;1,400;1,700;1,800&family=Quantico:ital,wght@0,700;1,700&family=Quattrocento+Sans:wght@700&family=Rum+Raisin&family=Questrial&=Mulish:wght@200;400;500;600;700&family=Raleway:wght@300&display=swap')
 
 @font-face
     font-family: 'Newake'
-    src: url("/assets/NewakeFont-Demo.otf") format('opentype')
+    src: url("https://s3.ca-central-1.amazonaws.com/raymondmorland.com/NewakeFont-Demo.otf") format('opentype')
 
 html
     // scroll-behavior: smooth
@@ -14,7 +14,7 @@ body
     // background-color: #222
     background-color: #3f4238
     transition: background-color .75s ease
-    font-family: 'Raleway', sans-serif
+    font-family: 'Mulish', sans-serif
     // color: #f0f0f0
     color: #ffe8d6
     font-size: 1em
@@ -36,21 +36,22 @@ h1
     font-family: "Newake"
 
 h2
-    font-size: 3.5em
+    font-size: 11vw
     line-height: auto
     font-weight: 300
     font-family: "Newake"
 
 .section-heading
-    opacity: 0.5
+    font-size: 2vw
 
 h3
-    font-family: "Newake"
     margin: 0
-    font-size: 2.5em
+    font-size: 2vw
+    text-transform: uppercase
+    font-weight: 200
 
 p
-    font-size: 1.5em
+    font-size: 1.75vw
     line-height: 2em
     font-weight: lighter
 
@@ -90,3 +91,11 @@ p
 
 a
     text-decoration: none !important
+    color: #ffe8d6
+    font-size: 2vw
+    text-transform: uppercase
+    padding-bottom: .15em
+    box-sizing: border-box
+    border-bottom: .1em solid rgba(0,0,0,0)
+a:hover
+    border-bottom: .1em solid #ffe8d6

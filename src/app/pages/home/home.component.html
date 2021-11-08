@@ -16,12 +16,11 @@
         </h1>
       </div>
     </div>
-    <div class="section">
+    <div class="section" style="margin-bottom: 0">
       <div #showInfo>
         <p
-          *ngIf="showInfoContent"
           style="margin-top: 7.5em; width: 20em"
-          [@animate]="{ value: '*', params: { delay: '350ms' } }"
+          [@fadeInOut]="showInfoContent ? '1' : '0'"
         >
           You care about your customers. You care about your business. Do you
           want to leverage the latest technology to grow your business and
@@ -34,14 +33,14 @@
     <!-- Projects Section -->
     <div class="section" style="margin-bottom: 0em">
       <div #showProject>
-        <p
+        <h3
           *ngIf="showProjectHeader"
           class="section-heading"
-          style="margin-bottom: 5em"
+          style="margin-top: 5em"
           [@animate]="{ value: '*', params: { delay: '350ms' } }"
         >
-          projects
-        </p>
+          select projects
+        </h3>
       </div>
 
       <div

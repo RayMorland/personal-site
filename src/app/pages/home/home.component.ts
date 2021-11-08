@@ -6,6 +6,20 @@ import {
   OnInit,
   ViewChild,
 } from "@angular/core";
+import {
+  sequence,
+  trigger,
+  animate,
+  style,
+  group,
+  query,
+  transition,
+  animateChild,
+  state,
+  animation,
+  useAnimation,
+  stagger,
+} from "@angular/animations";
 import { rmAnimations } from "src/app/shared/animations/rm-animations";
 import { BlogpostService } from "src/app/shared/services/blogpost.service";
 import { ProjectService } from "src/app/shared/services/project.service";
@@ -28,7 +42,25 @@ interface Project {
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.sass"],
-  animations: [rmAnimations],
+  animations: [
+    rmAnimations,
+    trigger("fadeInOut", [
+      state(
+        "0",
+        style({
+          opacity: 0,
+        })
+      ),
+      state(
+        "1",
+        style({
+          opacity: 1,
+        })
+      ),
+      transition("0 => 1", animate("500ms")),
+      transition("1 => 0", animate("500ms")),
+    ]),
+  ],
 })
 export class HomeComponent implements OnInit {
   public blogposts: Blogpost[] = [];
@@ -44,14 +76,16 @@ export class HomeComponent implements OnInit {
     if (
       this.showInfo.nativeElement.getBoundingClientRect().y <=
       window.innerHeight * 0.6
+      //   &&
+      // this.showInfo.nativeElement.getBoundingClientRect().y >
+      //   -0.2 * window.innerHeight
     ) {
       this.showInfoContent = true;
-    }
+    } else this.showInfoContent = false;
     if (
       this.showProject.nativeElement.getBoundingClientRect().y <=
       window.innerHeight * 0.4
     ) {
-      console.log(this.showProject.nativeElement);
       this.showProjectHeader = true;
     }
   }
@@ -63,11 +97,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogpostService.GetBlogposts().subscribe((res) => {
-      console.log(res);
       this.blogposts = res;
     });
     this.projectsService.GetProjects().subscribe((res) => {
-      console.log(res);
       this.projects = res;
     });
   }

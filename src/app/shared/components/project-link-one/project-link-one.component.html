@@ -16,6 +16,8 @@
           {{ project.title }}
         </h2>
         <div class="project-link-one-service-list">
+          <div class="year">2021</div>
+          <div class="line"></div>
           <div
             *ngFor="let service of project.services.split(',')"
             class="project-link-one-service-list-item"
@@ -27,9 +29,7 @@
     </div>
     <div class="right-side" [@navigating3]="switching ? 'work' : 'home'">
       <img class="right-side-image" [src]="project.primary_image.url" />
-      <a class="view-project-link" [routerLink]="['/work/' + project.slug]"
-        >view project</a
-      >
+      <p class="view-project-link">view project</p>
     </div>
     <!-- <p class="project-link-one-description">{{ project.description }}</p>
   <a [routerLink]="['/work/' + project.slug]">

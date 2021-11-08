@@ -47,14 +47,12 @@ export const rmAnimations = [
       "0",
       style({
         opacity: 0,
-        display: "none",
       })
     ),
     state(
       "1",
       style({
         opacity: 1,
-        display: "block",
       })
     ),
     transition("0 => 1", animate("500ms")),
