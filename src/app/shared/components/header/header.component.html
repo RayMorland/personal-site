@@ -5,6 +5,8 @@
       class="header-link"
       id="home-link"
       style="margin: 0"
+      (mouseenter)="hovered($event)"
+      (mouseleave)="hovered($event)"
       [ngStyle]="{ color: color }"
     >
       raymond morland
@@ -18,12 +20,27 @@
         class="header-link"
         [routerLink]="['/about']"
         routerLinkActive="router-link-active"
+        (mouseenter)="hovered($event)"
+        (mouseleave)="hovered($event)"
+        [ngStyle]="{
+          color: color
+        }"
+        >ABOUT</a
+      >
+      <a
+        class="header-link"
+        [routerLink]="['/work']"
+        routerLinkActive="router-link-active"
+        (mouseenter)="hovered($event)"
+        (mouseleave)="hovered($event)"
         [ngStyle]="{ color: color }"
-        >about</a
+        >WORK</a
       >
       <a
         class="header-link"
         href="mailto:raymondmorland@gmail.com"
+        (mouseenter)="hovered($event)"
+        (mouseleave)="hovered($event)"
         [ngStyle]="{ color: color }"
         >EMAIL</a
       >

@@ -60,47 +60,5 @@
         </app-project-link-one>
       </div>
     </div>
-    <!-- Blogposts Section -->
-    <!-- <div class="section" style="margin-bottom: 5em">
-      <h2>some <em style="font-family: 'Cardo', serif">words</em></h2>
-      <div
-        style="
-          width: 25%;
-          background-color: #fff;
-          height: 3px;
-          margin-top: 5.3em;
-        "
-        [@animate]="{ value: '*', params: { delay: '350ms' } }"
-      ></div>
-      <div
-        *ngIf="blogposts"
-        class="card-row-1"
-        style="display: flex; flex-direction: row; flex-wrap: wrap; width: 100%"
-      >
-        <div
-          *ngFor="let blogpost of blogposts | slice: 0:3"
-          [routerLink]="['words/' + blogpost.slug]"
-          class="card-1"
-          style="width: 45%"
-        >
-          <h3 style="font-size: 3em">{{ blogpost.title }}</h3>
-          <div
-            style="
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              padding-right: 20%;
-            "
-          >
-            <p>
-              {{ blogpost.subtitle }}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top: 5.3em">
-        <a routerLink="words">More Words</a>
-      </div>
-    </div> -->
   </div>
 </main>

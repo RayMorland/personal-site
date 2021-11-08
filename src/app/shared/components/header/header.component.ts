@@ -36,4 +36,12 @@ export class HeaderComponent implements OnInit {
       this.color = "#ffe8d6";
     }
   }
+
+  hovered(e: any) {
+    if (e.type === "mouseenter") {
+      e.target.style.borderBottomColor = this.color;
+    } else {
+      e.target.style.borderBottomColor = "rgba(0,0,0,0)";
+    }
+  }
 }

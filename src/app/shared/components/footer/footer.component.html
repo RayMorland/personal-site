@@ -14,9 +14,25 @@
       "
     >
       <div>
-        <a [ngStyle]="{ color: color }" href="">github</a
-        ><a [ngStyle]="{ color: color }" href="">linkedIn</a
-        ><a [ngStyle]="{ color: color }" href="">email</a>
+        <a
+          [ngStyle]="{ color: color }"
+          (mouseenter)="hovered($event)"
+          (mouseleave)="hovered($event)"
+          href=""
+          >github</a
+        ><a
+          [ngStyle]="{ color: color }"
+          (mouseenter)="hovered($event)"
+          (mouseleave)="hovered($event)"
+          href=""
+          >linkedIn</a
+        ><a
+          [ngStyle]="{ color: color }"
+          (mouseenter)="hovered($event)"
+          (mouseleave)="hovered($event)"
+          href=""
+          >email</a
+        >
       </div>
       <div
         class="copyright"
