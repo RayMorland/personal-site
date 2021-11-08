@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   public backgroundColor: string = "none";
   @ViewChild("header", { static: false })
   headerRef: ElementRef<HTMLElement>;
+  color: any = "#3f4238";
 
   constructor(private router: Router) {
     this.routerEventSub = router.events
@@ -30,10 +31,9 @@ export class HeaderComponent implements OnInit {
       routeChange.url.split("/")[1] === "work" &&
       routeChange.url.split("/").length > 2
     ) {
-      console.log(this.headerRef);
-      this.headerRef.nativeElement.style.color = "#3f4238 !important";
+      this.color = "#3f4238";
     } else {
-      this.headerRef.nativeElement.style.color = "#ffe8d6";
+      this.color = "#ffe8d6";
     }
   }
 }

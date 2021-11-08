@@ -1,15 +1,32 @@
 <header #header>
-  <div class="navbar" [ngStyle]="{ 'background-color': backgroundColor }">
-    <a routerLink="/" class="" style="margin: 0"> raymond morland </a>
+  <div class="navbar" id="navbar" [ngStyle]="{ color: color }">
+    <a
+      routerLink="/"
+      class="header-link"
+      id="home-link"
+      style="margin: 0"
+      [ngStyle]="{ color: color }"
+    >
+      raymond morland
+    </a>
     <div class="navlinks">
       <!-- <a routerLink="about">about</a>
       <a routerLink="work">work</a> -->
       <!-- <a routerLink="words">words</a> -->
       <!-- <a [routerLink]="['/work']" routerLinkActive="router-link-active">work</a> -->
-      <a [routerLink]="['/about']" routerLinkActive="router-link-active"
+      <a
+        class="header-link"
+        [routerLink]="['/about']"
+        routerLinkActive="router-link-active"
+        [ngStyle]="{ color: color }"
         >about</a
       >
-      <a href="mailto:raymondmorland@gmail.com">EMAIL</a>
+      <a
+        class="header-link"
+        href="mailto:raymondmorland@gmail.com"
+        [ngStyle]="{ color: color }"
+        >EMAIL</a
+      >
       <!-- <a
         href="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/Raymond+Morland+Resume.pdf"
         target="_blank"

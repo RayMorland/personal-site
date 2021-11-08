@@ -14,7 +14,9 @@
       "
     >
       <div>
-        <a href="">github</a><a href="">linkedIn</a><a href="">email</a>
+        <a [ngStyle]="{ color: color }" href="">github</a
+        ><a [ngStyle]="{ color: color }" href="">linkedIn</a
+        ><a [ngStyle]="{ color: color }" href="">email</a>
       </div>
       <div
         class="copyright"
@@ -24,6 +26,7 @@
           align-items: center;
           justify-content: space-between;
         "
+        [ngStyle]="{ color: color }"
       >
         <span class="material-icons" style="font-size: 2vw; margin-right: 0.3em"
           >copyright</span

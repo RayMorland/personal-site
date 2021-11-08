@@ -15,43 +15,27 @@ export class FooterComponent implements OnInit {
   public backgroundColor: string = "none";
   routerEventSub: any;
   route: any;
+  color: any;
 
   constructor(private router: Router) {
     this.routerEventSub = router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((routeChange: any) => {
         console.log(routeChange);
-        if (
-          routeChange.url.split("/")[1] === "work" &&
-          routeChange.url.split("/").length > 2
-        ) {
-          document.body.style.backgroundColor = "#ffe8d6";
-          document.body.style.color = "#3f4238";
-        } else {
-          document.body.style.backgroundColor = "#3f4238";
-          document.body.style.color = "#ffe8d6";
-        }
+        this.changeColor(routeChange);
       });
   }
 
-  ngOnInit(): void {
-    // this.route = this.router.url;
-    // this.pickColor();
-    // this.navEnd.subscribe((routeChange) => {
-    //   this.route = routeChange.url;
-    //   this.pickColor();
-    // });
-  }
+  ngOnInit(): void {}
 
-  // pickColor(): void {
-  //   if (this.route.startsWith('/work')) {
-  //     this.backgroundColor = '#91846E';
-  //   } else if (this.route.startsWith('/words')) {
-  //     this.backgroundColor = '#916E8C';
-  //   } else if (this.route== '/about') {
-  //     this.backgroundColor = '#6E7B91';
-  //   } else if (this.route == '/') {
-  //     this.backgroundColor = '#6E9173';
-  //   }
-  // }
+  changeColor(routeChange: any) {
+    if (
+      routeChange.url.split("/")[1] === "work" &&
+      routeChange.url.split("/").length > 2
+    ) {
+      this.color = "#3f4238";
+    } else {
+      this.color = "#ffe8d6";
+    }
+  }
 }
