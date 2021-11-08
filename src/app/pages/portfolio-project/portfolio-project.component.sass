@@ -2,26 +2,44 @@ main
     min-height: 100vh
     color: #3f4238
 
+    .content
+        padding-top: 20vh
+
     a
         color: #3f4238
+
+    .section
+        margin-bottom: 26vh
 
     a:hover
         border-bottom-color: #3f4238
 
     img
-        filter: grayscale(1)
+        // filter: grayscale(1)
         opacity: .8
+        height: 80vh
+
+        object-fit: cover
+
+    video
+        opacity: .8
+
+    p
+        text-transform: uppercase
+        line-height: normal
+        margin-top: 0
+        font-size: 1.3em
+        letter-spacing: .15em
 
     .portfolio-project-section
         display: flex
         flex-direction: row
         flex-wrap: wrap
+        column-gap: 20px
 
         .left-section
-            width: 33.3%
 
         .right-section
-            flex: 1
 
             // .stats-items
             //     stye="display: flex; flex-direction: row; justify-content:space-between; align-items: flex-start; width: 100%"

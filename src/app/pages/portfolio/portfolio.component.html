@@ -5,9 +5,14 @@
     [@animate]="{ value: '*', params: { delay: '350ms' } }"
   >
     <div class="section">
-      <h1>my work</h1>
-    </div>
-    <div class="section">
+      <h3
+        *ngIf="true"
+        class="section-heading"
+        style="margin-top: 5em"
+        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+      >
+        SELECTED PROJECTS
+      </h3>
       <div
         style="
           display: flex;
@@ -17,18 +22,31 @@
           width: 100%;
         "
       >
-        <app-project-link-one
+        <!-- <app-project-link-one
           *ngFor="let project of projects"
           [project]="project"
           [routerLink]="[project.slug]"
           class="project-link"
           style="width: 100%; margin-bottom: 0"
         >
-        </app-project-link-one>
+        </app-project-link-one> -->
+        <a
+          *ngFor="let project of projects"
+          class="project-link"
+          [routerLink]="[project.slug]"
+          ><h2>{{ project.title }}</h2></a
+        >
       </div>
     </div>
     <div class="section section-bottom">
-      <h2>other stuff</h2>
+      <h3
+        *ngIf="true"
+        class="section-heading"
+        style="margin-top: 5em"
+        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+      >
+        OTHER PROJECTS
+      </h3>
     </div>
   </div>
 </main>
