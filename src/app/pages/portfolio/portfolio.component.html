@@ -34,8 +34,18 @@
           *ngFor="let project of projects"
           class="project-link"
           [routerLink]="[project.slug]"
-          ><h2>{{ project.title }}</h2></a
-        >
+          ><h2>{{ project.title }}</h2>
+          <div class="project-link-one-service-list">
+            <div class="year">2021</div>
+            <div class="line"></div>
+            <div
+              *ngFor="let service of project.services.split(',')"
+              class="project-link-one-service-list-item"
+            >
+              {{ service }}
+            </div>
+          </div>
+        </a>
       </div>
     </div>
     <div class="section section-bottom">
@@ -47,6 +57,53 @@
       >
         OTHER PROJECTS
       </h3>
+      <div class="other-projects-wrapper">
+        <div class="other-project">
+          <div class="other-project-heading">
+            <h3>Mordev Studio's First Website</h3>
+            <div class="line"></div>
+            <a href="">Github</a>
+            <a href="">Website</a>
+          </div>
+          <div>
+            <ul>
+              <li>React</li>
+              <li>mongodb</li>
+              <li>node</li>
+            </ul>
+          </div>
+        </div>
+        <div class="other-project">
+          <div class="other-project-heading">
+            <h3>Canadian Powerlifting League Site</h3>
+            <div class="line"></div>
+            <a href="">Github</a>
+            <a href="">Website</a>
+          </div>
+          <div>
+            <ul>
+              <li>React</li>
+              <li>mongodb</li>
+              <li>node</li>
+            </ul>
+          </div>
+        </div>
+        <div class="other-project">
+          <div class="other-project-heading">
+            <h3>GPX Upload App</h3>
+            <div class="line"></div>
+            <a href="">Github</a>
+            <a href="">Website</a>
+          </div>
+          <div>
+            <ul>
+              <li>React</li>
+              <li>mongodb</li>
+              <li>node</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </main>
