@@ -18,4 +18,8 @@ export class ProjectService {
     const params = new HttpParams().append("slug", slug);
     return this.http.get(API_URL + "/projects", { params: params });
   }
+
+  public GetSecondaryProjects(): Observable<any> {
+    return this.http.get(API_URL + "/secondary-projects");
+  }
 }

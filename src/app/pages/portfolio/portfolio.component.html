@@ -58,21 +58,10 @@
         OTHER PROJECTS
       </h3>
       <div class="other-projects-wrapper">
-        <div class="other-project">
-          <div class="other-project-heading">
-            <h3>Mordev Studio's First Website</h3>
-            <div class="line"></div>
-            <a href="">Github</a>
-            <a href="">Website</a>
-          </div>
-          <div>
-            <ul>
-              <li>React</li>
-              <li>mongodb</li>
-              <li>node</li>
-            </ul>
-          </div>
-        </div>
+        <app-secondary-project
+          *ngFor="let secondaryProject of secondaryProjects"
+          [project]="secondaryProject"
+        ></app-secondary-project>
         <div class="other-project">
           <div class="other-project-heading">
             <h3>Canadian Powerlifting League Site</h3>

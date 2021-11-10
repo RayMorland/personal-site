@@ -1,0 +1,15 @@
+<div *ngIf="project" class="other-project">
+  <div class="other-project-heading">
+    <h3>{{ project.Title }}</h3>
+    <div class="line"></div>
+    <a href="">Github</a>
+    <a href="">Website</a>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let service of project.Stack.split(',')">
+        {{ service }}
+      </li>
+    </ul>
+  </div>
+</div>
