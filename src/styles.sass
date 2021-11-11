@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use './assets/styles/_variables' as vars
+
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Cantora+One&family=Cardo:ital@1&family=Jost:wght@200;300;400&family=Poppins:ital,wght@0,400;0,500;0,700;1,300;1,400;1,700;1,800&family=Quantico:ital,wght@0,700;1,700&family=Quattrocento+Sans:wght@700&family=Rum+Raisin&family=Questrial&=Mulish:wght@200;400;500;600;700&family=Raleway:wght@300&display=swap')
 
 @font-face
@@ -118,3 +120,11 @@ ul
         font-size: 1.4vw
         margin-bottom: 1vh
         text-transform: uppercase
+
+@media screen and (min-width: vars.$LaptopWidth)
+
+@media screen and (min-width: vars.$TabletWidth)
+
+@media screen and (min-width: vars.$MobileLargeWidth)
+
+@media screen and (min-width: vars.$MobileSmallWidth)

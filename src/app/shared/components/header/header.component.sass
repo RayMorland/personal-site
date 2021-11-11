@@ -1,11 +1,11 @@
-header
+@use '../../../../assets/styles/_variables' as vars
 
+header
     position: absolute
     width: 100%
     z-index: 100
 
     .navbar
-        display: flex
         align-items: top
         max-width: 100%
         padding: 5vh 10vw 5vh 10vw
@@ -30,3 +30,17 @@ header
             color: #1b1b1b
             padding: 0.5em 1em
             font-weight: bold
+
+@media (max-width: vars.$MobileSmallWidth)
+    .navbar
+
+@media (min-width: vars.$MobileLargeWidth)
+    .navbar
+
+@media (max-width: vars.$LaptopWidth)
+    .navbar
+        display: none
+
+@media (min-width: vars.$LaptopWidth)
+    .navbar
+        display: flex
