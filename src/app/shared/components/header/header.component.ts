@@ -2,11 +2,13 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { filter } from "rxjs/operators";
+import { rmAnimations } from "../../animations/rm-animations";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.sass"],
+  animations: [rmAnimations],
 })
 export class HeaderComponent implements OnInit {
   private routerEventSub: Subscription;
@@ -14,6 +16,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild("header", { static: false })
   headerRef: ElementRef<HTMLElement>;
   color: any = "#3f4238";
+  menuOpen = false;
 
   constructor(private router: Router) {
     this.routerEventSub = router.events

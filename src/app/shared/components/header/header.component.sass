@@ -6,41 +6,95 @@ header
     z-index: 100
 
     .navbar
-        align-items: top
-        max-width: 100%
-        padding: 5vh 10vw 5vh 10vw
-        justify-content: space-between
-        align-items: center
+        width: 100%
 
-        a
-            font-size: 2vw
-            margin-left: 1em
-            text-transform: uppercase
+        .compact-navbar
+            max-width: 100%
+            padding: 5vh 10vw 5vh 10vw
+            justify-content: space-between
+            align-items: center
+            .menu-button
+                background: none
+                border: none
+                display: flex
+                flex-direction: column
+                gap: 4px
+                width: 25px
+                height: auto
+                align-items: center
+                justify-content: flex-start
 
-        a:hover
-            text-decoration: underline
+                &
 
-        .navlinks
-            display: flex
-            flex-direction: row
+                .menu-button-line
+                    height: 2px
+                    width: 25px
+
+        .full-screen-navbar
+            align-items: top
+            max-width: 100%
+            padding: 5vh 10vw 5vh 10vw
+            justify-content: space-between
             align-items: center
 
-        .resume-link
-            background: white
-            color: #1b1b1b
-            padding: 0.5em 1em
-            font-weight: bold
+            a
+                font-size: 2vw
+                margin-left: 1em
+                text-transform: uppercase
+
+            a:hover
+                text-decoration: underline
+
+            .navlinks
+                display: flex
+                flex-direction: row
+                align-items: center
+
+            .resume-link
+                background: white
+                color: #1b1b1b
+                padding: 0.5em 1em
+                font-weight: bold
+
+#full-screen-menu
+    background-color: #3f4238
+    display: flex
+    position: fixed
+    z-index: 1000
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
+    overflow: clip
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    #close-menu-button
+        font-size: 2vw
+        text-transform: uppercase
+        background: none
+        border: none
+        color: #ffe8d6
+        margin-top: 30vh
+
+    a
+        border-bottom: none !important
 
 @media (max-width: vars.$MobileSmallWidth)
-    .navbar
+    .full-screen-navbar
 
 @media (min-width: vars.$MobileLargeWidth)
-    .navbar
+    .full-screen-navbar
 
 @media (max-width: vars.$LaptopWidth)
-    .navbar
+    .compact-navbar
+        display: flex
+    .full-screen-navbar
         display: none
 
 @media (min-width: vars.$LaptopWidth)
-    .navbar
+    .compact-navbar
+        display: none
+    .full-screen-navbar
         display: flex

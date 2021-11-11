@@ -1,56 +1,95 @@
-<header #header>
+<header #header [@animate]="{ value: '*', params: { delay: '2s' } }">
   <div class="navbar" id="navbar" [ngStyle]="{ color: color }">
-    <a
-      routerLink="/"
-      class="header-link"
-      id="home-link"
-      style="margin: 0"
-      (mouseenter)="hovered($event)"
-      (mouseleave)="hovered($event)"
-      [ngStyle]="{ color: color }"
-    >
-      raymond morland
-    </a>
-    <div class="navlinks">
-      <!-- <a routerLink="about">about</a>
+    <div class="compact-navbar">
+      <a
+        routerLink="/"
+        class="header-link"
+        id="home-link"
+        style="margin: 0"
+        (mouseenter)="hovered($event)"
+        (mouseleave)="hovered($event)"
+        [ngStyle]="{ color: color }"
+      >
+        raymond morland
+      </a>
+      <button class="menu-button" (click)="menuOpen = !menuOpen">
+        <div
+          class="menu-button-line"
+          [ngStyle]="{ 'background-color': color }"
+        ></div>
+        <div
+          class="menu-button-line"
+          [ngStyle]="{ 'background-color': color }"
+        ></div>
+        <div
+          class="menu-button-line"
+          [ngStyle]="{ 'background-color': color }"
+        ></div>
+      </button>
+    </div>
+    <div class="full-screen-navbar">
+      <a
+        routerLink="/"
+        class="header-link"
+        id="home-link"
+        style="margin: 0"
+        (mouseenter)="hovered($event)"
+        (mouseleave)="hovered($event)"
+        [ngStyle]="{ color: color }"
+      >
+        raymond morland
+      </a>
+      <div class="navlinks">
+        <!-- <a routerLink="about">about</a>
       <a routerLink="work">work</a> -->
-      <!-- <a routerLink="words">words</a> -->
-      <!-- <a [routerLink]="['/work']" routerLinkActive="router-link-active">work</a> -->
-      <a
-        class="header-link"
-        [routerLink]="['/about']"
-        routerLinkActive="router-link-active"
-        (mouseenter)="hovered($event)"
-        (mouseleave)="hovered($event)"
-        [ngStyle]="{
-          color: color
-        }"
-        >ABOUT</a
-      >
-      <a
-        class="header-link"
-        [routerLink]="['/work']"
-        routerLinkActive="router-link-active"
-        (mouseenter)="hovered($event)"
-        (mouseleave)="hovered($event)"
-        [ngStyle]="{ color: color }"
-        >WORK</a
-      >
-      <a
-        class="header-link"
-        href="mailto:raymondmorland@gmail.com"
-        (mouseenter)="hovered($event)"
-        (mouseleave)="hovered($event)"
-        [ngStyle]="{ color: color }"
-        >EMAIL</a
-      >
-      <!-- <a
+        <!-- <a routerLink="words">words</a> -->
+        <!-- <a [routerLink]="['/work']" routerLinkActive="router-link-active">work</a> -->
+        <a
+          class="header-link"
+          [routerLink]="['/about']"
+          routerLinkActive="router-link-active"
+          (mouseenter)="hovered($event)"
+          (mouseleave)="hovered($event)"
+          [ngStyle]="{
+            color: color
+          }"
+          >ABOUT</a
+        >
+        <a
+          class="header-link"
+          [routerLink]="['/work']"
+          routerLinkActive="router-link-active"
+          (mouseenter)="hovered($event)"
+          (mouseleave)="hovered($event)"
+          [ngStyle]="{ color: color }"
+          >WORK</a
+        >
+        <a
+          class="header-link"
+          href="mailto:raymondmorland@gmail.com"
+          (mouseenter)="hovered($event)"
+          (mouseleave)="hovered($event)"
+          [ngStyle]="{ color: color }"
+          >EMAIL</a
+        >
+        <!-- <a
         href="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/Raymond+Morland+Resume.pdf"
         target="_blank"
         download
         class="resume-link"
         >resume</a
       > -->
+      </div>
     </div>
   </div>
 </header>
+
+<div id="full-screen-menu" *ngIf="menuOpen">
+  <a [routerLink]="['/']" (click)="menuOpen = !menuOpen">Home</a>
+  <a [routerLink]="['/about']" (click)="menuOpen = !menuOpen">About</a>
+  <a [routerLink]="['/work']" (click)="menuOpen = !menuOpen">Work</a>
+  <a href="mailto:raymondmorland@gmail.com">Email</a>
+  <button (click)="menuOpen = !menuOpen" id="close-menu-button">
+    Close Menu
+  </button>
+</div>
