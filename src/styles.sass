@@ -57,7 +57,6 @@ h3
 p
     text-transform: uppercase
     margin-top: 0
-    font-size: 1.7vw
     letter-spacing: .15em
     font-weight: 200
 
@@ -100,7 +99,6 @@ p
 a
     text-decoration: none !important
     color: #ffe8d6
-    font-size: 2vw
     text-transform: uppercase
     padding-bottom: .15em
     box-sizing: border-box
@@ -123,14 +121,20 @@ ul
 
 @media screen and (max-width: vars.$MobileSmallWidth)
 
-@media screen and (max-width: vars.$MobileLargeWidth)
+@media screen and (min-width: vars.$MobileLargeWidth)
     a
-        font-size: 40px
+        font-size: 18px
+    p
+        font-size: 16px
 
-@media screen and (max-width: vars.$TabletWidth)
+@media screen and (min-width: vars.$TabletWidth)
     a
-        font-size: 40px
+        font-size: 22px
+    p
+        font-size: 20px
 
 @media screen and (min-width: vars.$LaptopWidth)
     a
         font-size: 2vw
+    p
+        font-size: 1.7vw

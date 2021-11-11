@@ -1,3 +1,5 @@
+@use '../../../assets/styles/_variables' as vars
+
 main
     min-height: 100%
     // background-color: #8BA78F
@@ -14,3 +16,8 @@ main
 a
     text-decoration: none
     border-bottom: 1px solid white
+
+@media screen and (min-width: vars.$LaptopWidth)
+    #info-paragraph
+        margin-top: 7.5em
+        width: 50%

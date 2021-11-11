@@ -81,7 +81,9 @@ export class HomeComponent implements OnInit {
       //   -0.2 * window.innerHeight
     ) {
       this.showInfoContent = true;
-    } else this.showInfoContent = false;
+    }
+
+    // else this.showInfoContent = false;
     if (
       this.showProject.nativeElement.getBoundingClientRect().y <=
       window.innerHeight * 0.4
