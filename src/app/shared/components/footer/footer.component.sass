@@ -1,3 +1,5 @@
+@use '../../../../assets/styles/_variables' as vars
+
 footer
     width: 100%
     // background-color: #191919
@@ -8,16 +10,37 @@ footer
         min-height: 1em
         padding: 0vh 10vw 0vh 10vw
 
-        .footer-links
+        #bottom-footer
+            width: 100%
+            padding: 5em 0
             display: flex
-            flex-direction: column
-            padding: 0
+            align-items: center
+            justify-content: space-between
+            gap: 30px
 
+            #bottom-footer-links
+                display: flex
+                align-items: center
+                justify-content: space-between
+                gap: 20px
             li
                 list-style: none
                 margin: 0
 
-        a
-            margin-right: 1em
-
         .copyright
+
+@media screen and (max-width: vars.$TabletWidth)
+    #bottom-footer
+        flex-direction: column
+        #bottom-footer-links
+            flex-direction: column
+
+@media screen and (min-width: vars.$TabletWidth)
+    #bottom-footer
+        flex-direction: column
+        #bottom-footer-links
+            flex-direction: row
+
+@media screen and (min-width: vars.$LaptopWidth)
+    #bottom-footer
+        flex-direction: row

@@ -1,8 +1,8 @@
 @use '../../../../assets/styles/_variables' as vars
 
 .project-link-wrapper
-    height: 100vh
     opacity: 1
+    height: 100%
     .project-link-one
         position: relative
         text-decoration: none
@@ -60,15 +60,14 @@
             position: relative
             float: right
             right: 0vw
-            top: 10%
             overflow: hidden
 
             .right-side-image
                 position: relative
                 z-index: 1
                 transition: all .5s ease
-                height: 100vh
                 width: auto
+                height: 100%
                 top: 0
                 left: 0
                 position: absolute
@@ -107,6 +106,7 @@
         .right-side
             width: 100%
             height: 70vh
+            .right-side-image
             .view-project-link
                 opacity: 100
 
@@ -118,7 +118,8 @@
             .left-side
             .right-side
                 width: 50vw
-                height: 70vh
+                height: 80%
+                .right-side-image
                 .view-project-link
                     opacity: 0
 
@@ -127,14 +128,12 @@
                 cursor: pointer
 
                 .right-side
-                    height: 80vh
+                    height: 90%
                     width: 40vw
                     right: 0%
 
                     .right-side-image
                         opacity: .3
-
-                        height: 80vh
 
                     .view-project-link
                         opacity: 100
