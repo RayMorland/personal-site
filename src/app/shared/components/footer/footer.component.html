@@ -10,7 +10,11 @@
         <a
           href="mailto:raymondmorland@gmail.com"
           target="_blank"
-          style="border-bottom: 0.1em solid #ffe8d6"
+          [ngStyle]="{
+            color: color,
+            'border-bottom': '0.1em solid ' + color,
+            'border-bottom-color': color
+          }"
           >send me an email</a
         >
       </p>
