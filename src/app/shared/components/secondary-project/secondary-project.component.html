@@ -2,8 +2,10 @@
   <div class="other-project-heading">
     <h3>{{ project.Title }}</h3>
     <div class="line"></div>
-    <a href="">Github</a>
-    <a href="">Website</a>
+    <a *ngIf="project.Github" [href]="project.Github" target="_blank">Github</a>
+    <a *ngIf="project.Website" [href]="project.Website" target="_blank"
+      >Website</a
+    >
   </div>
   <div>
     <ul>

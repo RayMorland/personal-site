@@ -82,6 +82,7 @@ export class ProjectLinkOneComponent implements OnInit {
   show = false;
   scrolling = false;
   switching = false;
+  windowWidth = window.innerWidth;
   @Input() project: any;
   @ViewChild("projectLink") link: ElementRef<HTMLElement>;
   @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
@@ -91,6 +92,10 @@ export class ProjectLinkOneComponent implements OnInit {
     ) {
       this.show = true;
     }
+  }
+  @HostListener("window:resize", ["$event"]) resize(event: any) {
+    console.log(event, window.innerWidth);
+    this.windowWidth = window.innerWidth;
   }
 
   constructor(private router: Router) {}
