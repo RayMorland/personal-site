@@ -93,22 +93,25 @@
 
 @media screen and (max-width: vars.$MobileLargeWidth)
     .project-link-wrapper
-        height: auto
+        height: 100%
+        .project-link-wrapper
+            height: auto
 
+            .project-link-one
+                .left-side
+                .right-side
+
+@media screen and (max-width: vars.$LaptopWidth)
+    .project-link-wrapper
+        height: 100%
         .project-link-one
             .left-side
             .right-side
-
-@media screen and (max-width: vars.$LaptopWidth)
-
-    .project-link-one
-        .left-side
-        .right-side
-            width: 100%
-            height: 70vh
-            .right-side-image
-            .view-project-link
-                opacity: 100
+                width: 100%
+                height: 70vh
+                .right-side-image
+                .view-project-link
+                    opacity: 100
 
 @media screen and (min-width: vars.$LaptopWidth)
     .project-link-wrapper
