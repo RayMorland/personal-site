@@ -32,9 +32,9 @@ export class PublicSiteComponent implements OnInit {
     this.navEnd.subscribe((e) => {
       this.pickColor(e);
     });
-    this.navStart.subscribe((e) => {
-      this.pickColor(e);
-    });
+    // this.navStart.subscribe((e) => {
+    //   this.pickColor(e);
+    // });
   }
   ngOnInit(): void {
     // this.route = this.router.url;
