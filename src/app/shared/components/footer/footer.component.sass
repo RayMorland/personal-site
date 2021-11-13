@@ -29,18 +29,34 @@ footer
 
         .copyright
 
+            span
+                margin-bottom: 5px
+
 @media screen and (max-width: vars.$TabletWidth)
+
+    p, .material-icons
+        font-size: 18px !important
+        text-align: center
+
     #bottom-footer
         flex-direction: column
         #bottom-footer-links
             flex-direction: column
 
 @media screen and (min-width: vars.$TabletWidth)
+
+    p, .material-icons
+        font-size: 22px !important
+
     #bottom-footer
         flex-direction: column
         #bottom-footer-links
             flex-direction: row
 
 @media screen and (min-width: vars.$LaptopWidth)
+
+    p, .material-icons
+        font-size: 2vw !important
+
     #bottom-footer
         flex-direction: row

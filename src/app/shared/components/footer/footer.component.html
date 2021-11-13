@@ -4,9 +4,10 @@
     [ngStyle]="{ 'background-color': backgroundColor }"
   >
     <div>
-      <p style="font-size: 2vw">
+      <p>
         Currently open for work <br />
         If you like what you see
+        <br *ngIf="windowWidth < 1024" />
         <a
           href="mailto:raymondmorland@gmail.com"
           target="_blank"
@@ -51,10 +52,13 @@
         "
         [ngStyle]="{ color: color }"
       >
-        <span class="material-icons" style="font-size: 2vw; margin-right: 0.3em"
-          >copyright</span
-        >
-        <p style="margin: 0; font-size: 2vw">2021 RAYMOND MORLAND</p>
+        <p style="margin: 0">
+          <span
+            class="material-icons"
+            style="margin-right: 0.3em; vertical-align: middle"
+            >copyright</span
+          >2021 RAYMOND MORLAND
+        </p>
       </div>
     </div>
   </div>

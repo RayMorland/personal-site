@@ -1,3 +1,5 @@
+@use '../../../assets/styles/_variables' as vars
+
 main
     min-height: 100vh
 
@@ -23,13 +25,11 @@ main
 
     .project-link-one-service-list-item
         margin-right: 0.75em
-        font-size: 1.75vw
         font-weight: 200
         text-transform: uppercase
         letter-spacing: 0.07em
 
     .year
-        font-size: 2vw
 
     .line
         height: 1.5px
@@ -77,3 +77,19 @@ main
             width: 25px
             margin: .5em
             background-color: #ffe8d6
+
+@media screen and (max-width: vars.$MobileLargeWidth)
+    li
+        font-size: 16px
+
+@media screen and (min-width: vars.$MobileLargeWidth)
+    li
+        font-size: 16px
+
+@media screen and (min-width: vars.$TabletWidth)
+    li
+        font-size: 20px
+
+@media screen and (min-width: vars.$LaptopWidth)
+    li
+        font-size: 1.7vw

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { Observable, Subscription } from "rxjs";
 import { filter } from "rxjs/operators";
@@ -11,6 +11,10 @@ import { Event } from "@angular/router";
 })
 export class FooterComponent implements OnInit {
   // private routerEventSub: Subscription;
+  windowWidth: any;
+  @HostListener("window:resize", ["$event"]) onResize(): void {
+    this.windowWidth = window.innerWidth;
+  }
 
   public backgroundColor: string = "none";
   routerEventSub: any;
