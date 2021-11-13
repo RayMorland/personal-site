@@ -69,14 +69,14 @@ header
     flex-direction: column
     justify-content: center
     align-items: center
+    gap: 40px
 
     #close-menu-button
-        font-size: 2vw
         text-transform: uppercase
         background: none
         border: none
         color: #ffe8d6
-        margin-top: 30vh
+        cursor: pointer
 
     a
         border-bottom: none !important
@@ -93,8 +93,14 @@ header
     .full-screen-navbar
         display: none
 
+    #close-menu-button
+        font-size: 16px
+
 @media (min-width: vars.$LaptopWidth)
     .compact-navbar
         display: none
     .full-screen-navbar
         display: flex
+
+    #close-menu-button
+        font-size: 2vw
