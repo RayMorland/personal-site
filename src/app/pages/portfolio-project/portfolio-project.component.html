@@ -12,52 +12,35 @@
     </div>
     <!-- Projects Stats Section -->
     <div
-      class="section portfolio-project-section"
+      class="section portfolio-project-section-stats"
       style="justify-content: flex-end"
     >
-      <div style="flex: 2"></div>
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-start;
-          flex: 3;
-        "
-      >
-        <div>
-          <h3 style="margin-bottom: 0.7em">year</h3>
-          <p>{{ project.year }}</p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.7em">location</h3>
-          <p>{{ project.location }}</p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.7em">industry</h3>
-          <p>{{ project.industry }}</p>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 0.7em">services</h3>
-          <div
-            *ngFor="let service of project.services.split(',')"
-            style="margin-right: 0.75em"
-            class="project-service"
-          >
-            <p>{{ service }}</p>
-          </div>
+      <div class="stats-item">
+        <h3 style="margin-bottom: 0.7em">year</h3>
+        <p>{{ project.year }}</p>
+      </div>
+      <div class="stats-item">
+        <h3 style="margin-bottom: 0.7em">location</h3>
+        <p>{{ project.location }}</p>
+      </div>
+      <div class="stats-item">
+        <h3 style="margin-bottom: 0.7em">industry</h3>
+        <p>{{ project.industry }}</p>
+      </div>
+      <div class="stats-item">
+        <h3 style="margin-bottom: 0.7em">services</h3>
+        <div
+          *ngFor="let service of project.services.split(',')"
+          style="margin-right: 0.75em"
+          class="project-service"
+        >
+          <p>{{ service }}</p>
         </div>
       </div>
     </div>
     <!-- Main Image Section -->
     <div *ngIf="image" class="section">
       <div class="image-wrapper">
-        <!-- <img
-          class="filtered-image"
-          [src]="image.url"
-          alt=""
-          style="margin-bottom: 1em"
-        /> -->
         <video
           style="width: 100%"
           loop
@@ -68,10 +51,10 @@
       </div>
     </div>
     <div class="section portfolio-project-section info">
-      <div class="left-section" style="flex: 3">
+      <div class="left-section">
         <a [href]="project.url" target="_blank">VISIT WEBSITE</a>
       </div>
-      <div class="right-section" style="flex: 2">
+      <div class="right-section">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a
           felis a diam congue efficitur nec in est. Sed maximus nec enim in
@@ -80,20 +63,20 @@
         </p>
       </div>
     </div>
-    <div class="section portfolio-project-section">
+    <div class="section portfolio-project-section images">
       <img
-        style="flex: 3; object-position: 0 0"
+        class="left-image"
         src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
         alt=""
       />
       <img
-        style="flex: 2; object-position: 0 40%"
+        class="right-image"
         src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
         alt=""
       />
     </div>
-    <div class="section portfolio-project-section info">
-      <div class="left-section" style="flex: 2">
+    <div class="section portfolio-project-section info-2">
+      <div class="left-section">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a
           felis a diam congue efficitur nec in est. Sed maximus nec enim in
@@ -101,21 +84,21 @@
           lectus vitae imperdiet.
         </p>
       </div>
-      <div class="right-section" style="flex: 3">
+      <div class="right-section">
         <ul style="margin: 0; padding: 0; list-style-type: none; float: right">
           <li><p>JAVASCRIPT</p></li>
           <li><p>ANGULAR</p></li>
         </ul>
       </div>
     </div>
-    <div class="section portfolio-project-section">
+    <div class="section portfolio-project-section images-2">
       <img
-        style="flex: 2; object-position: 0 60%"
+        class="left-image"
         src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
         alt=""
       />
       <img
-        style="flex: 3; object-position: 0 100%"
+        class="right-image"
         src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
         alt=""
       />
@@ -125,20 +108,6 @@
       <a [routerLink]="['/work']" style="margin-top: 10vh">
         back to projects
       </a>
-      <!-- <div
-        class="right-section"
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          align-items: center;
-        "
-      >
-        <h2 style="margin: 0">next project title</h2>
-        <span class="material-icons" style="font-size: 3em; margin-left: 0.4em"
-          >east</span
-        >
-      </div> -->
     </div>
   </div>
 </main>

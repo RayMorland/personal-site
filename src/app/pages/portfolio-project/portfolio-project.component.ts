@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { rmAnimations } from "src/app/shared/animations/rm-animations";
 import Project from "src/app/shared/models/project.model";
@@ -15,6 +15,10 @@ export class PortfolioProjectComponent implements OnInit {
   project: any = { title: "", services: "", slug: "", description: "" };
   image: any;
   images: any = [];
+  windowWidth: any;
+  @HostListener("window:resize") resize() {
+    this.windowWidth = window.innerWidth;
+  }
 
   constructor(
     private route: ActivatedRoute,

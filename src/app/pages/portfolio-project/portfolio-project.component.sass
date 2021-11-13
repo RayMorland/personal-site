@@ -1,3 +1,5 @@
+@use '../../../assets/styles/_variables' as vars
+
 main
     min-height: 100vh
     color: #3f4238
@@ -7,9 +9,6 @@ main
 
     a
         color: #3f4238
-
-    .section
-        margin-bottom: 26vh
 
     a:hover
         border-bottom-color: #3f4238
@@ -35,46 +34,111 @@ main
         display: flex
         flex-direction: row
         flex-wrap: wrap
-        column-gap: 20px
+        gap: 20px
+
+    .info
+        .left-section
+            flex: 3
+            margin-bottom: 40px
+
+        .right-section
+            flex: 2
+
+    .info-2
+        .left-section
+            flex: 2
+            margin-bottom: 40px
+
+        .right-section
+            flex: 3
+
+    .portfolio-project-section-stats
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        flex: 3
+
+        .stats-item
+                flex
 
         .left-section
 
         .right-section
 
-            // .stats-items
-            //     stye="display: flex; flex-direction: row; justify-content:space-between; align-items: flex-start; width: 100%"
+    .portfolio-project-section .images-2
 
-        .section-heading
-            margin-top: 0
+    .images
+        .left-image
+            flex: 3
+            object-position: 0 0
+        .right-image
+            flex: 2
+            object-position: 0 40%
 
-    .portfolio-project-gallery-section
-        display: flex
-        flex-direction: row
-        align-content: flex-start
-        justify-content: space-between
-        flex-wrap: wrap
-
-        .image-grid-main-img
-            width: 100%
-            flex: 1
-            img
-                width: 100%
-
-        .image-grid
-            display: grid
-            grid-template-columns: repeat(2, 1fr)
-            gap: 2.5em
-            grid-auto-rows: minmax(100px, 500px)
-
-            .image-grid-img
-                width: 100%
-                overflow: hidden
-
-                img
-                    min-width: 100%
-                    min-height: 100%
+    .images-2
+        .left-image
+            flex: 2
+            object-position: 0 60%
+        .right-image
+            flex: 3
+            object-position: 0 100%
 
     #back-to-work
         transition: all .2s ease
         &:hover
             opacity: 1
+
+@media screen and (max-width: vars.$MobileLargeWidth)
+    li
+        font-size: 16px
+    .portfolio-project-section-stats
+        flex-direction: column
+        gap: 20px
+    .section
+        margin-bottom: 50px
+
+    .images
+        .left-image
+            flex: 100%
+        .right-image
+            flex: 100%
+
+    .images-2
+        .left-image
+            flex: 100%
+        .right-image
+            flex: 100%
+
+@media screen and (min-width: vars.$MobileLargeWidth)
+    li
+        font-size: 16px
+    .portfolio-project-section-stats
+        flex-direction: column
+    .section
+        margin-bottom: 10vh
+
+@media screen and (min-width: vars.$TabletWidth)
+    li
+        font-size: 20px
+
+@media screen and (min-width: vars.$LaptopWidth)
+    li
+        font-size: 1.7vw
+    .portfolio-project-section-stats
+        flex-direction: row
+        gap: 40px
+
+    .section
+        margin-bottom: 26vh
+
+    .images
+        .left-image
+            flex: 3
+        .right-image
+            flex: 2
+
+    .images-2
+        .left-image
+            flex: 2
+        .right-image
+            flex: 3
