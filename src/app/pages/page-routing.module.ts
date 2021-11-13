@@ -1,49 +1,49 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PublicSiteComponent } from '../shared/components/layouts/public-site/public-site.component';
-import { NotFoundComponent } from '../shared/components/util/not-found/not-found.component';
-import { AboutComponent } from './about/about.component';
-import { BlogPostComponent } from './blog-post/blog-post.component';
-import { BlogComponent } from './blog/blog.component';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
-import { PortfolioProjectComponent } from './portfolio-project/portfolio-project.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { PublicSiteComponent } from "../shared/components/layouts/public-site/public-site.component";
+import { NotFoundComponent } from "../shared/components/util/not-found/not-found.component";
+import { AboutComponent } from "./about/about.component";
+import { BlogPostComponent } from "./blog-post/blog-post.component";
+import { BlogComponent } from "./blog/blog.component";
+import { ContactComponent } from "./contact/contact.component";
+import { HomeComponent } from "./home/home.component";
+import { PortfolioProjectComponent } from "./portfolio-project/portfolio-project.component";
+import { PortfolioComponent } from "./portfolio/portfolio.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: PublicSiteComponent,
     children: [
       {
-        path: '',
+        path: "",
         component: HomeComponent,
       },
       {
-        path: 'words',
+        path: "words",
         component: BlogComponent,
       },
       {
-        path: 'words/:id',
+        path: "words/:id",
         component: BlogPostComponent,
       },
       {
-        path: 'about',
+        path: "about",
         component: AboutComponent,
       },
       {
-        path: 'work',
+        path: "work",
         component: PortfolioComponent,
       },
       {
-        path: 'work/:id',
+        path: "work/:id",
         component: PortfolioProjectComponent,
       },
-      { path: 'contact', component: ContactComponent },
+      { path: "contact", component: ContactComponent },
     ],
   },
   {
-    path: '**',
+    path: "**",
     component: NotFoundComponent,
   },
 ];
