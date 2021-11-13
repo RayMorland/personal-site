@@ -9,6 +9,7 @@ main
 
     a
         color: #3f4238
+        border-bottom: 0.1em solid #3f4238
 
     a:hover
         border-bottom-color: #3f4238
@@ -57,9 +58,11 @@ main
         justify-content: space-between
         align-items: flex-start
         flex: 3
+        gap: 20px
+        flex-direction: row
+        flex-wrap: wrap
 
         .stats-item
-                flex
 
         .left-section
 
@@ -92,10 +95,25 @@ main
     li
         font-size: 16px
     .portfolio-project-section-stats
-        flex-direction: column
         gap: 20px
     .section
         margin-bottom: 50px
+
+    .info
+        .left-section
+            flex: 100%
+            margin-bottom: 40px
+
+        .right-section
+            flex: 100%
+
+    .info-2
+        .left-section
+            flex: 100%
+            margin-bottom: 40px
+
+        .right-section
+            flex: 100%
 
     .images
         .left-image
@@ -109,13 +127,28 @@ main
         .right-image
             flex: 100%
 
-@media screen and (min-width: vars.$MobileLargeWidth)
+@media screen and (max-width: vars.$MobileLargeWidth)
     li
         font-size: 16px
     .portfolio-project-section-stats
         flex-direction: column
+
+        .stats-item
+            flex: 30%
     .section
         margin-bottom: 10vh
+
+    .images
+        .left-image
+            flex: 100%
+        .right-image
+            flex: 100%
+
+    .images-2
+        .left-image
+            flex: 100%
+        .right-image
+            flex: 100%
 
 @media screen and (min-width: vars.$TabletWidth)
     li
@@ -125,8 +158,10 @@ main
     li
         font-size: 1.7vw
     .portfolio-project-section-stats
-        flex-direction: row
         gap: 40px
+
+        .stats-item
+            flex: 1
 
     .section
         margin-bottom: 26vh
