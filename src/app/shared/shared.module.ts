@@ -12,6 +12,7 @@ import { ProjectLinkOneComponent } from "./components/project-link-one/project-l
 import { FormInputOneComponent } from "./components/forms/form-input-one/form-input-one.component";
 import { FormOneComponent } from "./components/forms/form-one/form-one.component";
 import { SecondaryProjectComponent } from "./components/secondary-project/secondary-project.component";
+import { AppearDirective } from "./directives/appear.directive";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SecondaryProjectComponent } from "./components/secondary-project/second
     FormInputOneComponent,
     FormOneComponent,
     SecondaryProjectComponent,
+    AppearDirective,
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { SecondaryProjectComponent } from "./components/secondary-project/second
     LinkOneComponent,
     FormsModule,
     ReactiveFormsModule,
+    AppearDirective,
   ],
 })
 export class SharedModule {}
