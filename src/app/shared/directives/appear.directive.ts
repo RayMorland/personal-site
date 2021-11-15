@@ -21,6 +21,7 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
     if (
       this.element.nativeElement.getBoundingClientRect().y <= window.innerHeight
     ) {
+      console.log(this.element.nativeElement.offsetTop);
       this.element.nativeElement.style.opacity = 1;
     }
   }
@@ -66,6 +67,7 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
       this.saveDimensions();
       if (this.isVisible()) {
         this.unsubscribe();
+
         this.element.nativeElement.style.opacity = 1;
         this.appear.emit(this.element);
       }
@@ -102,12 +104,15 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    if (
-      this.element.nativeElement.getBoundingClientRect().y <=
-      window.innerHeight * 0.75
-    ) {
-      this.element.nativeElement.style.opacity = 1;
-    }
+    setTimeout(() => {
+      if (
+        this.element.nativeElement.getBoundingClientRect().y <=
+        window.innerHeight * 0.75
+      ) {
+        console.log(this.element.nativeElement.offsetTop);
+        this.element.nativeElement.style.opacity = 1;
+      }
+    }, 0);
   }
   ngOnDestroy() {
     // this.unsubscribe();
