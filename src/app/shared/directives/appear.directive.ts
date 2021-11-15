@@ -5,6 +5,8 @@ import {
   AfterViewInit,
   OnDestroy,
   EventEmitter,
+  OnInit,
+  HostListener,
 } from "@angular/core";
 import { Subscription } from "rxjs";
 import { fromEvent } from "rxjs";
@@ -15,6 +17,13 @@ import { startWith } from "rxjs/operators";
 })
 export class AppearDirective implements AfterViewInit, OnDestroy {
   @Output() appear: EventEmitter<any>;
+  @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
+    if (
+      this.element.nativeElement.getBoundingClientRect().y <= window.innerHeight
+    ) {
+      this.element.nativeElement.style.opacity = 1;
+    }
+  }
 
   elementPos: number;
   elementHeight: number;
@@ -26,7 +35,7 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
   subscriptionResize: Subscription;
 
   constructor(private element: ElementRef) {
-    this.appear = new EventEmitter<any>();
+    // this.appear = new EventEmitter<any>();
   }
 
   saveDimensions() {
@@ -45,11 +54,19 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
     return offsetTop;
   }
   checkVisibility() {
+    // console.log(
+    //   this.scrollPos,
+    //   this.elementPos,
+    //   this.windowHeight,
+    //   this.elementHeight,
+    //   this.element
+    // );
     if (this.isVisible()) {
       // double check dimensions (due to async loaded contents, e.g. images)
       this.saveDimensions();
       if (this.isVisible()) {
         this.unsubscribe();
+        this.element.nativeElement.style.opacity = 1;
         this.appear.emit(this.element);
       }
     }
@@ -85,9 +102,14 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.subscribe();
+    if (
+      this.element.nativeElement.getBoundingClientRect().y <=
+      window.innerHeight * 0.75
+    ) {
+      this.element.nativeElement.style.opacity = 1;
+    }
   }
   ngOnDestroy() {
-    this.unsubscribe();
+    // this.unsubscribe();
   }
 }
