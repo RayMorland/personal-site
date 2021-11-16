@@ -68,39 +68,33 @@ export class HomeComponent implements OnInit {
   showProjectHeader = false;
   showInfoContent = false;
   @Input() project: any;
-  @ViewChild("showProject", { static: false })
-  showProject: ElementRef<HTMLElement>;
-  @ViewChild("showInfo", { static: false })
-  showInfo: ElementRef<HTMLElement>;
-  @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
-    if (
-      this.showInfo.nativeElement.getBoundingClientRect().y <=
-      window.innerHeight * 0.6
-      //   &&
-      // this.showInfo.nativeElement.getBoundingClientRect().y >
-      //   -0.2 * window.innerHeight
-    ) {
-      this.showInfoContent = true;
-    }
+  // @ViewChild("showProject", { static: false })
+  // showProject: ElementRef<HTMLElement>;
+  // @ViewChild("showInfo", { static: false })
+  // showInfo: ElementRef<HTMLElement>;
+  // @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
+  //   if (
+  //     this.showInfo.nativeElement.getBoundingClientRect().y <=
+  //     window.innerHeight * 0.6
+  //     //   &&
+  //     // this.showInfo.nativeElement.getBoundingClientRect().y >
+  //     //   -0.2 * window.innerHeight
+  //   ) {
+  //     this.showInfoContent = true;
+  //   }
 
-    // else this.showInfoContent = false;
-    if (
-      this.showProject.nativeElement.getBoundingClientRect().y <=
-      window.innerHeight * 0.4
-    ) {
-      this.showProjectHeader = true;
-    }
-  }
+  //   // else this.showInfoContent = false;
+  //   if (
+  //     this.showProject.nativeElement.getBoundingClientRect().y <=
+  //     window.innerHeight * 0.4
+  //   ) {
+  //     this.showProjectHeader = true;
+  //   }
+  // }
 
-  constructor(
-    private blogpostService: BlogpostService,
-    private projectsService: ProjectService
-  ) {}
+  constructor(private projectsService: ProjectService) {}
 
   ngOnInit(): void {
-    this.blogpostService.GetBlogposts().subscribe((res) => {
-      this.blogposts = res;
-    });
     this.projectsService.GetProjects().subscribe((res) => {
       this.projects = res;
     });

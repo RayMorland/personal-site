@@ -1,10 +1,9 @@
 <main>
-  <div class="content" [@animate]="{ value: '*', params: { delay: '650ms' } }">
+  <div class="content">
     <!-- Heading Section -->
-    <div class="section">
+    <div appear class="section">
       <div style="width: 100%">
         <h1
-          [@animate]="{ value: '*', params: { delay: '650ms' } }"
           style="
             margin-bottom: 1em;
             text-transform: uppercase;
@@ -16,30 +15,25 @@
         </h1>
       </div>
     </div>
-    <div class="section" style="margin-bottom: 0">
-      <div #showInfo>
-        <p id="info-paragraph" [@fadeInOut]="showInfoContent ? '1' : '0'">
-          You care about your customers. You care about your business. Do you
-          want to leverage the latest technology to grow your business and
-          continue to be competitive into the future but don't have the time to
-          learn new software? That's what I do. Let me help.
-          <br />
-        </p>
-      </div>
+    <div appear class="section" style="margin-bottom: 0">
+      <p id="info-paragraph">
+        You care about your customers. You care about your business. Do you want
+        to leverage the latest technology to grow your business and continue to
+        be competitive into the future but don't have the time to learn new
+        software? That's what I do. Let me help.
+        <br />
+      </p>
     </div>
     <!-- Projects Section -->
-    <div class="section" style="margin-bottom: 0em">
-      <div #showProject>
-        <h3
-          *ngIf="showProjectHeader"
-          class="section-heading"
-          style="margin-top: 5em"
-          [@animate]="{ value: '*', params: { delay: '350ms' } }"
-        >
-          select projects
-        </h3>
-      </div>
-
+    <div appear class="section" style="margin-bottom: 0em">
+      <h3
+        *ngIf="showProjectHeader"
+        class="section-heading"
+        style="margin-top: 5em"
+        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+      >
+        select projects
+      </h3>
       <div
         *ngIf="projects"
         class="card-row-1"
