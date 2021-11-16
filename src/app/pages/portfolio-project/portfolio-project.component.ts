@@ -33,8 +33,12 @@ export class PortfolioProjectComponent implements OnInit {
         this.project = res[0];
         this.image = this.project.primary_image;
         this.images = this.project.gallery.slice(1, 5);
-        console.log(this.images);
+        console.log(this.project);
       });
     });
+  }
+
+  loaded(loaded: boolean) {
+    console.log(loaded);
   }
 }

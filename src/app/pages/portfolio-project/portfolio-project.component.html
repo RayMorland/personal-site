@@ -1,28 +1,24 @@
 <main>
-  <div
-    *ngIf="project"
-    class="content"
-    [@animate]="{ value: '*', params: { delay: '350ms' } }"
-  >
+  <div *ngIf="project" class="content">
     <!-- Intro Section -->
     <div class="section" style="margin: 0">
-      <h2>{{ project.title }}</h2>
+      <h2 appear>{{ project.title }}</h2>
     </div>
     <!-- Projects Stats Section -->
-    <div class="section portfolio-project-section-stats">
-      <div class="stats-item">
+    <div *ngIf="project.year" class="section portfolio-project-section-stats">
+      <div appear class="stats-item">
         <h3 style="margin-bottom: 0.7em">year</h3>
         <p>{{ project.year }}</p>
       </div>
-      <div class="stats-item">
+      <div appear class="stats-item">
         <h3 style="margin-bottom: 0.7em">location</h3>
         <p>{{ project.location }}</p>
       </div>
-      <div class="stats-item">
+      <div appear class="stats-item">
         <h3 style="margin-bottom: 0.7em">industry</h3>
         <p>{{ project.industry }}</p>
       </div>
-      <div class="stats-item">
+      <div appear class="stats-item">
         <h3 style="margin-bottom: 0.7em">services</h3>
         <div
           *ngFor="let service of project.services.split(',')"
@@ -35,7 +31,7 @@
     </div>
     <!-- Main Video Section -->
     <div *ngIf="image" class="section">
-      <div class="image-wrapper">
+      <div appear class="image-wrapper">
         <video
           style="width: 100%"
           loop
@@ -43,69 +39,72 @@
           muted
           webkit-playsinline
           playsinline
-          src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacus_1.mov"
+          [src]="project.primary_video.url"
         ></video>
       </div>
     </div>
-    <div class="section portfolio-project-section info">
-      <div class="left-section">
+    <div
+      *ngIf="project.the_client"
+      class="section portfolio-project-section info"
+    >
+      <div appear class="left-section">
         <a [href]="project.url" target="_blank">VISIT WEBSITE</a>
       </div>
-      <div class="right-section">
+      <div appear class="right-section">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a
-          felis a diam congue efficitur nec in est. Sed maximus nec enim in
-          lacinia. Morbi a metus sed ipsum lobortis varius. Nunc sagittis quis
-          lectus vitae imperdiet.
+          {{ project.the_client }}
         </p>
       </div>
     </div>
-    <div class="section portfolio-project-section images">
-      <img
-        class="left-image"
-        src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
-        alt=""
-      />
-      <img
-        class="right-image"
-        src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
-        alt=""
-      />
+    <div
+      *ngIf="project.gallery"
+      class="section portfolio-project-section images"
+    >
+      <div appear class="left-image">
+        <img [src]="project.gallery[0].url" (load)="loaded(true)" alt="" />
+      </div>
+      <div appear class="right-image">
+        <img [src]="project.gallery[1].url" alt="" />
+      </div>
     </div>
     <div class="section portfolio-project-section info-2">
-      <div class="left-section">
+      <div appear class="left-section">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a
-          felis a diam congue efficitur nec in est. Sed maximus nec enim in
-          lacinia. Morbi a metus sed ipsum lobortis varius. Nunc sagittis quis
-          lectus vitae imperdiet.
+          {{ project.summary }}
         </p>
       </div>
       <div class="right-section">
-        <ul style="margin: 0; padding: 0; list-style-type: none; float: right">
-          <li><p>JAVASCRIPT</p></li>
-          <li><p>ANGULAR</p></li>
+        <ul
+          *ngIf="project.stack"
+          style="margin: 0; padding: 0; list-style-type: none; float: right"
+        >
+          <li appear *ngFor="let software of project.stack.split(',')">
+            {{ software }}
+          </li>
         </ul>
       </div>
     </div>
-    <div class="section portfolio-project-section images-2">
-      <img
-        class="left-image"
-        src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
-        alt=""
-      />
-      <img
-        class="right-image"
-        src="https://s3.ca-central-1.amazonaws.com/raymondmorland.com/abacusdatagraphics.com_home+(1).png"
-        alt=""
-      />
+    <div
+      *ngIf="project.gallery"
+      class="section portfolio-project-section images-2"
+    >
+      <div appear class="left-image" style="flex: 3">
+        <img [src]="project.gallery[2].url" alt="" />
+      </div>
+      <div appear class="right-image" style="flex: 2">
+        <img [src]="project.gallery[3].url" alt="" />
+      </div>
     </div>
     <!-- Next Project Section -->
     <div
       class="section portfolio-project-section bottom"
       style="margin-bottom: 0"
     >
-      <a [routerLink]="['/work']" style="margin-top: 10vh; margin-bottom: 20vh">
+      <a
+        appear
+        [routerLink]="['/work']"
+        style="margin-top: 10vh; margin-bottom: 20vh"
+      >
         back to projects
       </a>
     </div>
