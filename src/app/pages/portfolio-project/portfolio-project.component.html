@@ -88,15 +88,16 @@
       *ngIf="project.gallery"
       class="section portfolio-project-section images-2"
     >
-      <div appear class="left-image" style="flex: 3">
+      <div appear class="left-image">
         <img [src]="project.gallery[2].url" alt="" />
       </div>
-      <div appear class="right-image" style="flex: 2">
+      <div appear class="right-image">
         <img [src]="project.gallery[3].url" alt="" />
       </div>
     </div>
     <!-- Next Project Section -->
     <div
+      *ngIf="project"
       class="section portfolio-project-section bottom"
       style="margin-bottom: 0"
     >
