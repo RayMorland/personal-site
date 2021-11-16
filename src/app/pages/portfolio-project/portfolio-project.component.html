@@ -68,8 +68,8 @@
       </div>
     </div>
     <div class="section portfolio-project-section info-2">
-      <div appear class="left-section">
-        <p>
+      <div *ngIf="project.summary" class="left-section">
+        <p appear>
           {{ project.summary }}
         </p>
       </div>
