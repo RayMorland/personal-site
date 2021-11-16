@@ -1,18 +1,7 @@
 <main>
-  <div
-    *ngIf="projects"
-    class="content"
-    [@animate]="{ value: '*', params: { delay: '350ms' } }"
-  >
+  <div *ngIf="projects" class="content">
     <div class="section">
-      <h3
-        *ngIf="true"
-        class="section-heading"
-        style="margin-top: 5em"
-        [@animate]="{ value: '*', params: { delay: '350ms' } }"
-      >
-        SELECTED PROJECTS
-      </h3>
+      <h3 appear class="section-heading">SELECTED PROJECTS</h3>
       <div
         style="
           display: flex;
@@ -23,6 +12,7 @@
         "
       >
         <a
+          appear
           *ngFor="let project of projects"
           class="project-link"
           [routerLink]="[project.slug]"
@@ -43,16 +33,13 @@
       </div>
     </div>
     <div class="section section-bottom">
-      <h3
-        *ngIf="true"
-        class="section-heading"
-        style="margin-top: 5em"
-        [@animate]="{ value: '*', params: { delay: '350ms' } }"
-      >
+      <h3 appear class="section-heading" style="margin-top: 5em">
         OTHER PROJECTS
       </h3>
       <div class="other-projects-wrapper">
         <app-secondary-project
+          class="app-secondary-project"
+          appear
           *ngFor="let secondaryProject of secondaryProjects"
           [project]="secondaryProject"
         ></app-secondary-project>

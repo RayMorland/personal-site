@@ -15,14 +15,15 @@ import { startWith } from "rxjs/operators";
 @Directive({
   selector: "[appear]",
 })
-export class AppearDirective implements AfterViewInit, OnDestroy {
+export class AppearDirective implements OnInit, AfterViewInit, OnDestroy {
   @Output() appear: EventEmitter<any>;
   @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
     if (
-      this.element.nativeElement.getBoundingClientRect().y <= window.innerHeight
+      this.element.nativeElement.getBoundingClientRect().y <=
+      window.innerHeight * 0.75
     ) {
-      console.log(this.element.nativeElement.offsetTop);
       this.element.nativeElement.style.opacity = 1;
+      this.element.nativeElement.style.transform = "translateY(0px)";
     }
   }
 
@@ -103,14 +104,24 @@ export class AppearDirective implements AfterViewInit, OnDestroy {
     }
   }
 
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.element.nativeElement.style.opacity = 0;
+    this.element.nativeElement.style.transform = "translateY(100px)";
+    this.element.nativeElement.style.transition =
+      "opacity 1s ease, transform 1s ease";
+  }
+
   ngAfterViewInit() {
     setTimeout(() => {
       if (
         this.element.nativeElement.getBoundingClientRect().y <=
         window.innerHeight * 0.75
       ) {
-        console.log(this.element.nativeElement.offsetTop);
         this.element.nativeElement.style.opacity = 1;
+        this.element.nativeElement.style.transform = "translateY(0px)";
+      } else {
       }
     }, 0);
   }

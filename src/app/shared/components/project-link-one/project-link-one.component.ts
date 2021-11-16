@@ -85,14 +85,6 @@ export class ProjectLinkOneComponent implements OnInit {
   windowWidth = window.innerWidth;
   @Input() project: any;
   @ViewChild("projectLink") link: ElementRef<HTMLElement>;
-  @HostListener("window:scroll", ["$event"]) onScroll(event: any) {
-    if (
-      this.link.nativeElement.getBoundingClientRect().y <=
-      window.innerHeight * 0.25
-    ) {
-      this.show = true;
-    }
-  }
   @HostListener("window:resize", ["$event"]) resize(event: any) {
     console.log(event, window.innerWidth);
     this.windowWidth = window.innerWidth;
@@ -106,17 +98,6 @@ export class ProjectLinkOneComponent implements OnInit {
   }
 
   navigate(e: any) {
-    window.scrollTo({
-      top:
-        this.link.nativeElement.offsetTop -
-        this.link.nativeElement.scrollTop +
-        this.link.nativeElement.clientTop,
-      left: 0,
-      behavior: "smooth",
-    });
-    this.switching = true;
-    setTimeout(() => {
-      this.router.navigate(["/work/" + this.project.slug]);
-    }, 1000);
+    this.router.navigate(["/work/" + this.project.slug]);
   }
 }

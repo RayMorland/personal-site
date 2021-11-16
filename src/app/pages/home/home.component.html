@@ -27,10 +27,9 @@
     <!-- Projects Section -->
     <div appear class="section" style="margin-bottom: 0em">
       <h3
-        *ngIf="showProjectHeader"
+        appear
         class="section-heading"
-        style="margin-top: 5em"
-        [@animate]="{ value: '*', params: { delay: '350ms' } }"
+        style="margin-top: 5em; margin-bottom: 10vh"
       >
         select projects
       </h3>
@@ -40,6 +39,7 @@
         style="display: flex; flex-direction: row; flex-wrap: wrap"
       >
         <app-project-link-one
+          appear
           *ngFor="let project of projects; last as lastProject; index as i"
           class="card-1"
           [project]="project"
